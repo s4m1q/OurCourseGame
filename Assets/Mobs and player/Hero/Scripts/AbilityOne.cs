@@ -13,7 +13,7 @@ public class AbilityOneLevelData
 public class AbilityOne : MonoBehaviour
 {
     public List<AbilityOneLevelData> Levels = new List<AbilityOneLevelData>();
-    public int CurrentLevel = 1;
+    public int CurrentLevel = 0;
 
     private bool isOnCooldown = false;
 
@@ -35,7 +35,7 @@ public class AbilityOne : MonoBehaviour
         }
     }
 
-    private IEnumerator UseAbility()
+    public IEnumerator UseAbility()
     {
         isOnCooldown = true;
 

@@ -23,7 +23,7 @@ public class SpikeLogic : MonoBehaviour
         if (isOnSpikes)
         {
             spikeDamageTimer += Time.deltaTime;
-            Debug.Log($"Spike damage timer: {spikeDamageTimer}");
+            //Debug.Log($"Spike damage timer: {spikeDamageTimer}");
 
             if (spikeDamageTimer >= spikeDamageInterval)
             {
