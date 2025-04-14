@@ -46205,7 +46205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290923202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73303f1b1fd08a2498f33d436fc26802, type: 3}
   m_Name: 
@@ -46222,7 +46222,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290923202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.21999998
   m_Speed: 3.5
@@ -78433,8 +78433,66 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7113946201434974831, guid: dce59a1ea21b3cd46ac544a070b46b5c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3769430335608393971}
+    - targetCorrespondingSourceObject: {fileID: 7113946201434974831, guid: dce59a1ea21b3cd46ac544a070b46b5c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3769430335608393970}
   m_SourcePrefab: {fileID: 100100000, guid: dce59a1ea21b3cd46ac544a070b46b5c, type: 3}
+--- !u!1 &3769430335608393969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7113946201434974831, guid: dce59a1ea21b3cd46ac544a070b46b5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3769430335608393968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3769430335608393970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769430335608393969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2a5cd198ab3e04e90e9aff5441004a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels:
+  - Damage: 10
+    Radius: 5
+    Cooldown: 0
+  - Damage: 0
+    Radius: 0
+    Cooldown: 0
+  - Damage: 35
+    Radius: 6
+    Cooldown: 10
+  - Damage: 40
+    Radius: 7
+    Cooldown: 8
+  - Damage: 45
+    Radius: 8
+    Cooldown: 6
+  - Damage: 50
+    Radius: 9
+    Cooldown: 4
+  CurrentLevel: 3
+--- !u!114 &3769430335608393971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769430335608393969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c794ca5bc78c15449810dea843c8acad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4565553807778342921
 PrefabInstance:
   m_ObjectHideFlags: 0
