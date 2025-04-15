@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 8f; // Скорость бега
     private Rigidbody2D rb;
 
+    public Animator anime;
+    private SpriteRenderer spriteRenderer; // Компонент для управления спрайтом
+
     // Параметры здоровья и стамины
     public float maxHealth = 100f;
     public float currentHealth;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Получаем компонент SpriteRenderer
 
         // Инициализация здоровья и стамины
         currentHealth = maxHealth;
@@ -47,10 +51,12 @@ public class PlayerController : MonoBehaviour
         if (wantsToRun && currentStamina > 0)
         {
             isRunning = true;
+            anime.SetBool("Run", true);
         }
         else
         {
             isRunning = false; // Запрещаем бег, если стамина закончилась или Shift не зажат
+            anime.SetBool("Run", false);
         }
 
         // Вычисляем текущую скорость
@@ -63,10 +69,26 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             rb.linearVelocity = movement * speed;
+
+            // Поворот персонажа в зависимости от направления движения
+            if (moveX > 0) // Движение вправо
+            {
+                spriteRenderer.flipX = false; // Спрайт смотрит вправо
+            }
+            else if (moveX < 0) // Движение влево
+            {
+                spriteRenderer.flipX = true; // Спрайт смотрит влево
+            }
+
+            if (!isRunning)
+            {
+                anime.SetBool("Walk", true);
+            }
         }
         else
         {
             rb.linearVelocity = Vector2.zero;
+            anime.SetBool("Walk", false);
         }
 
         // Управление стаминой
@@ -116,6 +138,7 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            anime.SetBool("Death", true);
         }
     }
 
