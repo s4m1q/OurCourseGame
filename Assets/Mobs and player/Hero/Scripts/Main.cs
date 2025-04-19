@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections; //Поебота добавленная Тимуром
 
 public class PlayerController : MonoBehaviour
 {
@@ -134,12 +135,24 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
+        //Поебота добавленная Тимуром
+        StartCoroutine(DamageFlash());
+        Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
+
         // Проверяем, если здоровье закончилось
         if (currentHealth <= 0)
         {
             Die();
             anime.SetBool("Death", true);
         }
+    }
+
+    //Поебота добавленная Тимуром
+    private IEnumerator DamageFlash()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 
     void Die()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -16,10 +17,24 @@ public class EnemyAI : MonoBehaviour
     // Компонент NavMeshAgent для управления движением
     private NavMeshAgent navMeshAgent;
 
+    public float attackRange = 1.5f;
+
+    private Animator animator;
+    private bool isDead = false;
+
     void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.updateRotation = false; // Отключаем автоматическое вращение
+            navMeshAgent.updateUpAxis = false; // Предотвращаем изменение вертикальной оси
+        }
+
         // Инициализация здоровья
         currentHealth = maxHealth;
+        isDead = false;
 
         // Находим игрока по тегу "Player"
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -38,20 +53,63 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (player != null && navMeshAgent != null)
-        {
-            // Проверяем, находится ли игрок в зоне видимости
-            CheckPlayerInSight();
+        if (isDead) return;
+        // Проверяем наличие необходимых ссылок один раз
+        if (player == null || navMeshAgent == null)
+            return;
 
-            // Если игрок в зоне видимости, двигаемся к нему
-            if (isPlayerInSight)
+        // Проверяем видимость игрока один раз
+        CheckPlayerInSight();
+
+        if (isPlayerInSight)
+        {
+            FollowPlayer();
+            
+            // Поворот без изменения размера
+            if (navMeshAgent.velocity.x > 0.1f)
             {
-                FollowPlayer();
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), 
+                                                transform.localScale.y, 
+                                                transform.localScale.z);
             }
-            else
+            else if (navMeshAgent.velocity.x < -0.1f)
             {
-                // Останавливаем движение, если игрок вне зоны видимости
-                navMeshAgent.ResetPath();
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), 
+                                                transform.localScale.y, 
+                                                transform.localScale.z);
+            }
+        }
+        else
+        {
+            navMeshAgent.ResetPath();
+        }
+
+        UpdateAnimation();
+    }
+
+    void UpdateAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("IsWalking", isPlayerInSight && navMeshAgent.velocity.magnitude > 0.1f);
+            animator.SetBool("IsDead", isDead);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead) return;
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.TakeDamage(damage);
+                
+                // Опциональное отталкивание
+                Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * 3f, ForceMode2D.Impulse);
             }
         }
     }
@@ -81,6 +139,8 @@ public class EnemyAI : MonoBehaviour
     // Метод для получения урона
     public void TakeDamage(float damageAmount)
     {
+        if (isDead) return;
+
         currentHealth -= damageAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
@@ -96,6 +156,15 @@ public class EnemyAI : MonoBehaviour
     // Метод для смерти врага
     private void Die()
     {
+        isDead = true;
+        if (navMeshAgent != null) navMeshAgent.enabled = false;
+        
+        if (animator != null)
+        {
+            animator.SetTrigger("Die"); // Альтернатива IsDead, если используете триггер
+        }
+        Destroy(gameObject, 2f);
+        
         Debug.Log("Enemy has died!");
         // Здесь можно добавить логику смерти, например:
         // - Воспроизведение анимации смерти

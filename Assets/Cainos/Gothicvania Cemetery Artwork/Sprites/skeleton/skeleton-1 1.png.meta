@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 3d7ea891e5aa9415e9bf6d2e52d3d0d7
-AssetOrigin:
-  serializedVersion: 1
-  productId: 120509
-  packageName: GothicVania Cemetery
-  packageVersion: 1.0
-  assetPath: Assets/Gothicvania Cemetery Artwork/Sprites/skeleton/skeleton-1.png
-  uploadId: 250459
+guid: 27311dfe57513f8428067a8e5dd80099
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
