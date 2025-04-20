@@ -17,7 +17,7 @@ public class AbilityOne : MonoBehaviour
 
     private bool isOnCooldown = false;
 
-    public void TryUse()
+    public void UseAbility()
     {
         if (!isOnCooldown)
         {
@@ -27,7 +27,7 @@ public class AbilityOne : MonoBehaviour
             // AnimationHandler.Play("AbilityOne");
             // AudioManager.Play("AbilityOneSFX");
 
-            StartCoroutine(UseAbility());
+            StartCoroutine(TryUse());
         }
         else
         {
@@ -35,7 +35,7 @@ public class AbilityOne : MonoBehaviour
         }
     }
 
-    public IEnumerator UseAbility()
+    public IEnumerator TryUse()
     {
         isOnCooldown = true;
 

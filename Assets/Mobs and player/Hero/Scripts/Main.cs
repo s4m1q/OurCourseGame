@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         // Получаем входные данные от клавиш WASD или стрелок
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-
+        
         // Проверяем, зажата ли клавиша Shift для бега
         bool wantsToRun = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 

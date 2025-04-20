@@ -19,7 +19,7 @@ public class AbilityTwo : MonoBehaviour
     {
         if (Time.time - lastUseTime < cooldown)
         {
-            Debug.Log("Ability Two is on cooldown.");
+            Debug.Log("Способность 2 на перезарядке");
             return;
         }
 
@@ -31,6 +31,6 @@ public class AbilityTwo : MonoBehaviour
         player.currentStamina += staminaRestore;
         player.currentStamina = Mathf.Clamp(player.currentStamina, 0, player.maxStamina);
 
-        Debug.Log($"Used Ability Two: +{healthRestore} HP, +{staminaRestore} stamina.");
+        Debug.Log($"Использована 2 способность: +{healthRestore} HP, +{staminaRestore} стамина.");
     }
 }

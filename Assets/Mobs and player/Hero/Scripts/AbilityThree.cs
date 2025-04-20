@@ -18,6 +18,10 @@ public class AbilityThree : MonoBehaviour
             StartCoroutine(ApplyPoisonAura());
             Debug.Log("Использована 3 способность");
         }
+        else 
+        {
+            Debug.Log("перезарядка 3 способность");
+        }
     }
 
     private IEnumerator ApplyPoisonAura()
