@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
     public float maxStamina = 100f;
-    public int Coins =0;
+    public int Coins = 0;
     public float currentStamina;
     public float staminaRegenRate = 10f; // Скорость восстановления стамины
     public float staminaDrainRate = 20f; // Скорость расхода стамины
