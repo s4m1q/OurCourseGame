@@ -9,7 +9,8 @@ public class EnemyAI : MonoBehaviour
     public float currentHealth;   // Текущее здоровье
     public float damage = 10f;    // Урон, который наносит враг
     public float fieldOfViewRadius = 5f; // Радиус области видимости
-
+    public float dropChance = 0.5f;
+    public GameObject dropPrefab;
     // Ссылка на игрока
     public Transform player;
     private bool isPlayerInSight = false; // Флаг, находится ли игрок в зоне видимости
@@ -157,6 +158,15 @@ public class EnemyAI : MonoBehaviour
     private void Die()
     {
         isDead = true;
+        // Проверяем вероятность выпадения
+        if (dropPrefab != null)
+        {
+            if(Random.value < dropChance){
+                Instantiate(dropPrefab, transform.position, Quaternion.identity);
+            }
+            // Создаем выпадающий объект на месте смерти врага
+            Instantiate(dropPrefab, transform.position, Quaternion.identity);
+        }
         if (navMeshAgent != null) navMeshAgent.enabled = false;
         
         if (animator != null)
