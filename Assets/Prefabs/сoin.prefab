@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2099026921089083881}
   - component: {fileID: 2424461891000784959}
-  - component: {fileID: -3316413262229728604}
   - component: {fileID: -2018243214514432812}
   - component: {fileID: 6400408874722845894}
+  - component: {fileID: -2971381253741172235}
   m_Layer: 7
   m_Name: "\u0441oin"
   m_TagString: Coin
@@ -91,23 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3316413262229728604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5808691712331237788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558d353fc5c644e41982d574bf601264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: coin
-  value: 1
-  attractionRadius: 3
-  attractionSpeed: 5
-  rotationSpeed: 360
 --- !u!61 &-2018243214514432812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -270,3 +253,22 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-2971381253741172235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808691712331237788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558d353fc5c644e41982d574bf601264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Coin
+  value: 1
+  minRange: 0
+  maxRange: 100
+  attractionRadius: 3
+  attractionSpeed: 5
+  rotationSpeed: 360

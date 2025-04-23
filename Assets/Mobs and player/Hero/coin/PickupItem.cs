@@ -3,7 +3,11 @@ using UnityEngine;
 public class PickupItem : MonoBehaviour
 {
     public string itemName = "Coin";
-    public int value = 1;
+    public int value = 50;
+
+    public int minRange=0;
+
+    public int maxRange=100;
 
     public float attractionRadius = 3f;
     public float attractionSpeed = 5f;
@@ -51,7 +55,7 @@ public class PickupItem : MonoBehaviour
             PlayerController playerController = other.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.AddScore(value);
+                playerController.AddScore(value+Random.Range(minRange,maxRange));
             }
 
             Destroy(gameObject);
