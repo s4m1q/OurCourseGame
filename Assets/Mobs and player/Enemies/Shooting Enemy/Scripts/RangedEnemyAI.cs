@@ -17,7 +17,7 @@ public class RangedEnemyAI : MonoBehaviour
 
     public Transform player;
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
 
     private float lastAttackTime = -999f;
     private bool isDead = false;
@@ -27,7 +27,7 @@ public class RangedEnemyAI : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -113,9 +113,9 @@ public class RangedEnemyAI : MonoBehaviour
         if (animator != null)
             animator.SetBool("IsAttacked", true);
 
-        spriteRenderer.color = Color.red;
+        //spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
+        //spriteRenderer.color = Color.white;
 
         if (animator != null)
             animator.SetBool("IsAttacked", false);

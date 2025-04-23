@@ -39,6 +39,8 @@ public class AbilityThree : MonoBehaviour
                 if (col.CompareTag("Enemy"))
                 {
                     col.GetComponent<EnemyAI>()?.TakeDamage(damagePerLevel[abilityLevel]);
+                    col.GetComponent<RangedEnemyAI>()?.TakeDamage(damagePerLevel[abilityLevel]);
+                    col.GetComponent<TankAI>()?.TakeDamage(damagePerLevel[abilityLevel]);
                 }
             }
 

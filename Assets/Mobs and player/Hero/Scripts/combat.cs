@@ -24,6 +24,17 @@ public class combat : MonoBehaviour
                 enemyAI.TakeDamage(Attack_damage);
             }
 
+            var RangedEnemyAI = enemy.GetComponent<RangedEnemyAI>();
+            if (RangedEnemyAI != null)
+            {
+                RangedEnemyAI.TakeDamage(Attack_damage);
+            }
+
+            var TankAI = enemy.GetComponent<TankAI>();
+            if (TankAI != null)
+            {
+                TankAI.TakeDamage(Attack_damage);
+            }
             // Проверяем наличие компонента vase
             var vaseComponent = enemy.GetComponent<vase>();
             if (vaseComponent != null)

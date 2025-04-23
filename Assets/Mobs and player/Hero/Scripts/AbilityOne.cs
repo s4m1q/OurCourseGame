@@ -62,9 +62,22 @@ public class AbilityOne : MonoBehaviour
                     if (distance >= min && distance <= max)
                     {
                         EnemyAI enemy = col.GetComponent<EnemyAI>();
+                        RangedEnemyAI enemy1 = col.GetComponent<RangedEnemyAI>();
+                        TankAI enemy2 = col.GetComponent<TankAI>();
+                        
                         if (enemy != null)
                         {
                             enemy.TakeDamage(damage);
+                            Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
+                        }
+                        if (enemy1 != null)
+                        {
+                            enemy1.TakeDamage(damage);
+                            Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
+                        }
+                        if (enemy2 != null)
+                        {
+                            enemy2.TakeDamage(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                     }
