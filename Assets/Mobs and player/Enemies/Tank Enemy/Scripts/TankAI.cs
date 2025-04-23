@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
-public class EnemyAI : MonoBehaviour
+public class TankAI : MonoBehaviour
 {
     // Параметры врага
-    public float maxHealth = 100f; // Максимальное здоровье
+    public float maxHealth = 140f; // Максимальное здоровье
     public float currentHealth;   // Текущее здоровье
-    public float damage = 10f;    // Урон, который наносит враг
+    public float damage = 15f;    // Урон, который наносит враг
     public float fieldOfViewRadius = 5f; // Радиус области видимости
     public float dropChance = 0.5f;
     public GameObject dropPrefab;
@@ -24,8 +24,6 @@ public class EnemyAI : MonoBehaviour
     private bool isDead = false;
 
     private SpriteRenderer spriteRenderer; 
-
-    public float stunDuration = 0.2f; //Наверное побольше надо сделать
 
     private float attackCooldown = 1f;
     private float lastAttackTime = -999f;
@@ -147,7 +145,12 @@ public class EnemyAI : MonoBehaviour
 
         Debug.Log($"Enemy took {damageAmount} damage. Current health: {currentHealth}");
 
-        StartCoroutine(StunAndFlash());
+        // Меняем цвет спрайта
+        if (spriteRenderer != null)
+            spriteRenderer.color = Color.red;
+
+        // Возвращаем цвет обратно через небольшой промежуток времени
+        Invoke("ResetColor", 0.1f);
 
         // Если здоровье закончилось, вызываем метод Die
         if (currentHealth <= 0)
@@ -156,32 +159,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private IEnumerator StunAndFlash()
+    void ResetColor()
     {
-        if (navMeshAgent != null)
-            navMeshAgent.isStopped = true;
-
-        // Включаем анимацию получения урона
-        if (animator != null)
-            animator.SetBool("IsAttacked", true);
-
-        // Меняем цвет спрайта
-        if (spriteRenderer != null)
-            spriteRenderer.color = Color.red;
-
-        yield return new WaitForSeconds(0.1f);
-
         if (spriteRenderer != null)
             spriteRenderer.color = Color.white;
-
-        // Отключаем флаг анимации удара
-        if (animator != null)
-            animator.SetBool("IsAttacked", false);
-
-        yield return new WaitForSeconds(stunDuration - 0.1f);
-
-        if (navMeshAgent != null && !isDead)
-            navMeshAgent.isStopped = false;
     }
 
     // Метод для смерти врага

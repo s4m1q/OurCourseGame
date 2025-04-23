@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f; // Обычная скорость
     public float runSpeed = 8f; // Скорость бега
     private Rigidbody2D rb;
+    private float defaultMoveSpeed;
+    private float defaultRunSpeed;
 
     public Animator anime;
     private SpriteRenderer spriteRenderer; // Компонент для управления спрайтом
@@ -38,64 +40,85 @@ public class PlayerController : MonoBehaviour
 
         // Отключаем вращение через физику
         rb.freezeRotation = true;
+
+        defaultMoveSpeed = moveSpeed;
+        defaultRunSpeed = runSpeed;
     }
 
-void Update()
-{
-    // Получаем входные данные от клавиш WASD или стрелок
-    float moveX = Input.GetAxisRaw("Horizontal");
-    float moveY = Input.GetAxisRaw("Vertical");
-
-    // Проверяем, зажата ли клавиша Shift для бега
-    bool wantsToRun = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-
-    // Если игрок хочет бежать и стамина больше 0, разрешаем бег
-    if (wantsToRun && currentStamina > 0)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        isRunning = true;
-        anime.SetBool("Run", true);
-    }
-    else
-    {
-        isRunning = false; // Запрещаем бег, если стамина закончилась или Shift не зажат
-        anime.SetBool("Run", false);
-    }
-
-    // Вычисляем текущую скорость
-    float speed = isRunning ? runSpeed : moveSpeed;
-
-    // Создаем вектор направления движения
-    Vector2 movement = new Vector2(moveX, moveY).normalized;
-
-    // Применяем движение к Rigidbody2D
-    if (movement != Vector2.zero)
-    {
-        rb.linearVelocity = movement * speed;
-
-        // Поворот персонажа в зависимости от направления движения
-        if (moveX > 0) // Движение вправо
+        if (other.CompareTag("Enemy"))
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Угол 0 градусов
-        }
-        else if (moveX < 0) // Движение влево
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0); // Поворот на 180 градусов по оси Y
-        }
-
-        if (!isRunning)
-        {
-            anime.SetBool("Walk", true);
+            moveSpeed *= 0.7f;
+            runSpeed *= 0.7f;
         }
     }
-    else
+
+    void OnTriggerExit2D(Collider2D other)
     {
-        rb.linearVelocity = Vector2.zero;
-        anime.SetBool("Walk", false);
+        if (other.CompareTag("Enemy"))
+        {
+            moveSpeed = defaultMoveSpeed;
+            runSpeed = defaultRunSpeed;
+        }
     }
 
-    // Управление стаминой
-    HandleStamina();
-}
+    void Update()
+    {
+        // Получаем входные данные от клавиш WASD или стрелок
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        // Проверяем, зажата ли клавиша Shift для бега
+        bool wantsToRun = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+        // Если игрок хочет бежать и стамина больше 0, разрешаем бег
+        if (wantsToRun && currentStamina > 0)
+        {
+            isRunning = true;
+            anime.SetBool("Run", true);
+        }
+        else
+        {
+            isRunning = false; // Запрещаем бег, если стамина закончилась или Shift не зажат
+            anime.SetBool("Run", false);
+        }
+
+        // Вычисляем текущую скорость
+        float speed = isRunning ? runSpeed : moveSpeed;
+
+        // Создаем вектор направления движения
+        Vector2 movement = new Vector2(moveX, moveY).normalized;
+
+        // Применяем движение к Rigidbody2D
+        if (movement != Vector2.zero)
+        {
+            rb.linearVelocity = movement * speed;
+
+            // Поворот персонажа в зависимости от направления движения
+            if (moveX > 0) // Движение вправо
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0); // Угол 0 градусов
+            }
+            else if (moveX < 0) // Движение влево
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0); // Поворот на 180 градусов по оси Y
+            }
+
+            if (!isRunning)
+            {
+                anime.SetBool("Walk", true);
+            }
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            anime.SetBool("Walk", false);
+        }
+
+        // Управление стаминой
+        HandleStamina();
+    }
 
     void HandleStamina()
     {
