@@ -17,17 +17,30 @@ public class RangedEnemyAI : MonoBehaviour
 
     public Transform player;
     private Animator animator;
-    //private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     private float lastAttackTime = -999f;
     private bool isDead = false;
 
+    private NavMeshAgent navMeshAgent;
+
     public float stunDuration = 0.2f;
+
+    private Vector3 originalScale;
 
     void Start()
     {
+        originalScale = transform.localScale;
         animator = GetComponent<Animator>();
-        //spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.updateRotation = false;
+            navMeshAgent.updateUpAxis = false;
+        }
+
         currentHealth = maxHealth;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -39,33 +52,52 @@ public class RangedEnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (isDead || player == null) return;
+        if (isDead || player == null || navMeshAgent == null) return;
+
+        // Принудительно фиксируем Z-позицию
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
 
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // Видит игрока?
         bool seesPlayer = distance <= fieldOfViewRadius;
-        bool canCast = distance <= castRange;
+        bool inAttackRange = distance <= castRange;
 
         if (seesPlayer)
         {
             FacePlayer();
-        }
 
-        if (canCast && Time.time - lastAttackTime >= attackCooldown)
+            if (inAttackRange)
+            {
+                // Стреляем и останавливаемся
+                navMeshAgent.ResetPath();
+
+                if (Time.time - lastAttackTime >= attackCooldown)
+                {
+                    CastFireball();
+                }
+            }
+            else
+            {
+                // Подходим к игроку
+                Vector3 target = player.position;
+                target.z = 0;
+                navMeshAgent.SetDestination(target);
+            }
+        }
+        else
         {
-            CastFireball();
+            navMeshAgent.ResetPath();
         }
 
-        UpdateAnimation(seesPlayer, canCast);
+        UpdateAnimation(seesPlayer, inAttackRange);
     }
 
     void FacePlayer()
     {
         if (player.position.x > transform.position.x)
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
         else
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
     }
 
     void CastFireball()
@@ -74,8 +106,14 @@ public class RangedEnemyAI : MonoBehaviour
 
         if (fireballPrefab != null && firePoint != null)
         {
-            GameObject fireball = Instantiate(fireballPrefab, firePoint.position, Quaternion.identity);
-            Vector2 direction = (player.position - firePoint.position).normalized;
+            Vector3 firePos = firePoint.position;
+            firePos.z = 0f;
+
+            Vector3 targetPos = player.position;
+            targetPos.z = 0f;
+
+            GameObject fireball = Instantiate(fireballPrefab, firePos, Quaternion.identity);
+            Vector2 direction = (targetPos - firePos).normalized;
 
             Fireball fb = fireball.GetComponent<Fireball>();
             if (fb != null)
@@ -87,10 +125,13 @@ public class RangedEnemyAI : MonoBehaviour
         lastAttackTime = Time.time;
     }
 
-    void UpdateAnimation(bool seesPlayer, bool canCast)
+    void UpdateAnimation(bool seesPlayer, bool inAttackRange)
     {
-        animator?.SetBool("IsDead", isDead);
-        animator?.SetBool("PlayerInRange", seesPlayer);
+        if (animator == null) return;
+
+        animator.SetBool("IsDead", isDead);
+        animator.SetBool("PlayerInRange", seesPlayer);
+        animator.SetBool("IsWalking", seesPlayer && !inAttackRange && navMeshAgent.velocity.magnitude > 0.1f);
     }
 
     public void TakeDamage(float damage)
@@ -110,17 +151,27 @@ public class RangedEnemyAI : MonoBehaviour
 
     private IEnumerator StunAndFlash()
     {
+        if (navMeshAgent != null)
+            navMeshAgent.isStopped = true;
+
         if (animator != null)
             animator.SetBool("IsAttacked", true);
 
-        //spriteRenderer.color = Color.red;
+        if (spriteRenderer != null)
+            spriteRenderer.color = Color.red;
+
         yield return new WaitForSeconds(0.1f);
-        //spriteRenderer.color = Color.white;
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = Color.white;
 
         if (animator != null)
             animator.SetBool("IsAttacked", false);
 
         yield return new WaitForSeconds(stunDuration - 0.1f);
+
+        if (navMeshAgent != null && !isDead)
+            navMeshAgent.isStopped = false;
     }
 
     void Die()
@@ -131,9 +182,21 @@ public class RangedEnemyAI : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool("IsDead", true);
+            animator.SetBool("IsWalking", false);
         }
 
-        GetComponent<Collider2D>().enabled = false;
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.isStopped = true;
+            navMeshAgent.enabled = false;
+        }
+
+        var collider = GetComponent<Collider2D>();
+        if (collider != null) collider.enabled = false;
+
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.simulated = false;
+
         Destroy(gameObject, 2f);
     }
 

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6498351314969379192}
   - component: {fileID: 360343877267051858}
+  - component: {fileID: 2696461753199652817}
   - component: {fileID: 5566263434130339140}
   - component: {fileID: 1803642018436203371}
-  - component: {fileID: 2696461753199652817}
   - component: {fileID: 3626205306328879929}
   m_Layer: 6
   m_Name: Range-1
@@ -92,6 +92,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!195 &2696461753199652817
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259967123180183252}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.18499999
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.6499998
+  m_BaseOffset: 0.3249999
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &5566263434130339140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,28 +183,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.18528798, y: 0.39687687}
   m_EdgeRadius: 0
---- !u!195 &2696461753199652817
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259967123180183252}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.18499999
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.6499998
-  m_BaseOffset: 0.3249999
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!95 &3626205306328879929
 Animator:
   serializedVersion: 7

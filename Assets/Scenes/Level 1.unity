@@ -16658,6 +16658,61 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &349347857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349347859}
+  - component: {fileID: 349347858}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &349347858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349347857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91024541fbbc2b41af9d52778fc7de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 3848315136358664295, guid: d41b743ee095a8b4e8afbbe82d89a19b, type: 3}
+  - {fileID: 8668244777596838694, guid: a1e56cdcd1846d5408acd5190296f21b, type: 3}
+  - {fileID: 259967123180183252, guid: d1f0d4a16f654bf43b1f902584383356, type: 3}
+  innerRadius: 5
+  outerRadius: 20
+  spawnInterval: 10
+  enemiesPerWave: 3
+  maxEnemies: 20
+  navMeshSampleRadius: 2
+  player: {fileID: 1847117395}
+--- !u!4 &349347859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349347857}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.262862, y: -1.6533972, z: -0.83475393}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352965632
 GameObject:
   m_ObjectHideFlags: 0
@@ -89466,6 +89521,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: skeleton-1
       objectReference: {fileID: 0}
+    - target: {fileID: 3848315136358664295, guid: d41b743ee095a8b4e8afbbe82d89a19b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4920520685031886808, guid: d41b743ee095a8b4e8afbbe82d89a19b,
         type: 3}
       propertyPath: player
@@ -89553,6 +89613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668244777596838694, guid: a1e56cdcd1846d5408acd5190296f21b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90035,6 +90100,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 259967123180183252, guid: d1f0d4a16f654bf43b1f902584383356,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 360343877267051858, guid: d1f0d4a16f654bf43b1f902584383356,
         type: 3}
       propertyPath: m_SortingOrder
@@ -90063,7 +90133,7 @@ PrefabInstance:
     - target: {fileID: 6498351314969379192, guid: d1f0d4a16f654bf43b1f902584383356,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05841334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6498351314969379192, guid: d1f0d4a16f654bf43b1f902584383356,
         type: 3}
@@ -90121,3 +90191,4 @@ SceneRoots:
   - {fileID: 862260079}
   - {fileID: 121465942}
   - {fileID: 4085271244811589953}
+  - {fileID: 349347859}
