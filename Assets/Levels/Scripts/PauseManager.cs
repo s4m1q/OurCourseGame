@@ -6,6 +6,9 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseCanvas;       // Общий Canvas (изначально выключен)
     public GameObject pausePanel;        // Панель паузы внутри канваса
     public GameObject settingsPanel;     // Панель настроек внутри канваса
+    public AbilityUpgradeUI abilityUpgradeUI;  // Ссылка на UI прокачки
+    private bool wasUpgradePanelOpenBeforePause = false;
+
     private bool isPaused = false;
 
     void Update()
@@ -30,18 +33,36 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
-        pauseCanvas.SetActive(false);
+        pausePanel.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
+
+        if (wasUpgradePanelOpenBeforePause && abilityUpgradeUI != null)
+        {
+            abilityUpgradeUI.ForceOpen();
+        }
     }
+
 
     public void Pause()
     {
+        if (abilityUpgradeUI != null && abilityUpgradeUI.IsPanelOpen())
+        {
+            // Закрываем магазин и запоминаем, что он был открыт
+            abilityUpgradeUI.ForceClose();
+            wasUpgradePanelOpenBeforePause = true;
+        }
+        else
+        {
+            wasUpgradePanelOpenBeforePause = false;
+        }
+
         pauseCanvas.SetActive(true);
         OpenPausePanel();
         isPaused = true;
         Time.timeScale = 0f;
     }
+
 
     public void LoadMainMenu()
     {

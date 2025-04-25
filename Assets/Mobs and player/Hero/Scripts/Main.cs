@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
         //Поебота добавленная Тимуром
         StartCoroutine(DamageFlash());
-        Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
+        //Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
 
         // Проверяем, если здоровье закончилось
         if (currentHealth <= 0)
