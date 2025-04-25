@@ -1,14 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-
-[System.Serializable]
-public class AbilityTwoLevelData
-{
-    public float HealthRestore;
-    public float StaminaRestore;
-    public float Cooldown;
-}
+using TMPro; // Не забудь подключить TextMeshPro
 
 public class AbilityUpgradeUI : MonoBehaviour
 {
@@ -17,27 +9,34 @@ public class AbilityUpgradeUI : MonoBehaviour
     [Header("Способность 1")]
     public Button abilityOneUpgradeButton;
     public Text abilityOneLevelText;
+    public TextMeshProUGUI abilityOneCostText;
     public AbilityOne abilityOne;
 
     [Header("Способность 2")]
     public Button abilityTwoUpgradeButton;
     public Text abilityTwoLevelText;
+    public TextMeshProUGUI abilityTwoCostText;
     public AbilityTwo abilityTwo;
 
+    [Header("Способность 3")]
+    public Button abilityThreeUpgradeButton;
+    public Text abilityThreeLevelText;
+    public TextMeshProUGUI abilityThreeCostText;
+    public AbilityThree abilityThree;
+
     public PlayerController player;
-    public int upgradeCost = 100;
+
+    // Массив цен по уровням (индекс соответствует уровню: 1 => 150, 2 => 250 и т.д.)
+    private int[] upgradePrices = { 150, 250, 400, 600, 750, 1000 };
 
     private bool isPanelOpen = false;
-
-    // Данные уровней для способности 2
-    public List<AbilityTwoLevelData> abilityTwoLevels = new List<AbilityTwoLevelData>();
-    private int abilityTwoLevel = 1;
 
     void Start()
     {
         upgradePanel.SetActive(false);
         abilityOneUpgradeButton.onClick.AddListener(UpgradeAbilityOne);
         abilityTwoUpgradeButton.onClick.AddListener(UpgradeAbilityTwo);
+        abilityThreeUpgradeButton.onClick.AddListener(UpgradeAbilityThree);
         UpdateUI();
     }
 
@@ -53,37 +52,60 @@ public class AbilityUpgradeUI : MonoBehaviour
 
     void UpgradeAbilityOne()
     {
-        if (abilityOne.CurrentLevel < 5 && player.Coins >= upgradeCost)
+        if (CanUpgrade(abilityOne.CurrentLevel))
         {
+            player.Coins -= upgradePrices[abilityOne.CurrentLevel];
             abilityOne.CurrentLevel++;
-            player.Coins -= upgradeCost;
             UpdateUI();
         }
     }
 
     void UpgradeAbilityTwo()
     {
-        if (abilityTwoLevel < 5 && player.Coins >= upgradeCost)
+        if (CanUpgrade(abilityTwo.CurrentLevel))
         {
-            abilityTwoLevel++;
-            player.Coins -= upgradeCost;
-            ApplyAbilityTwoLevel();
+            player.Coins -= upgradePrices[abilityTwo.CurrentLevel];
+            abilityTwo.CurrentLevel++;
             UpdateUI();
         }
     }
 
-    void ApplyAbilityTwoLevel()
+    void UpgradeAbilityThree()
     {
-        var levelData = abilityTwoLevels[Mathf.Clamp(abilityTwoLevel - 1, 0, abilityTwoLevels.Count - 1)];
-        abilityTwo.healthRestore = levelData.HealthRestore;
-        abilityTwo.staminaRestore = levelData.StaminaRestore;
-        abilityTwo.cooldown = levelData.Cooldown;
+        if (CanUpgrade(abilityThree.CurrentLevel))
+        {
+            player.Coins -= upgradePrices[abilityThree.CurrentLevel];
+            abilityThree.CurrentLevel++;
+            UpdateUI();
+        }
+    }
+
+    bool CanUpgrade(int currentLevel)
+    {
+        return currentLevel < upgradePrices.Length && player.Coins >= upgradePrices[currentLevel];
     }
 
     void UpdateUI()
     {
         abilityOneLevelText.text = $"Уровень: {abilityOne.CurrentLevel}";
-        abilityTwoLevelText.text = $"Уровень: {abilityTwoLevel}";
+        abilityTwoLevelText.text = $"Уровень: {abilityTwo.CurrentLevel}";
+        abilityThreeLevelText.text = $"Уровень: {abilityThree.CurrentLevel}";
+
+        abilityOneCostText.text = GetCostText(abilityOne.CurrentLevel);
+        abilityTwoCostText.text = GetCostText(abilityTwo.CurrentLevel);
+        abilityThreeCostText.text = GetCostText(abilityThree.CurrentLevel);
+    }
+
+    string GetCostText(int currentLevel)
+    {
+        if (currentLevel < upgradePrices.Length)
+        {
+            return $"Цена: {upgradePrices[currentLevel]}";
+        }
+        else
+        {
+            return "Макс. уровень";
+        }
     }
 
     public void ForceOpen()
