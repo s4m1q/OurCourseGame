@@ -54,6 +54,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void AddStamina(int value)
+    {
+        if(currentStamina+value<maxStamina){
+            currentStamina+=value;
+        }else{
+            currentStamina=maxStamina;
+        }
+    }
+
+
+    public void AddHP(int value)
+    {
+        if(currentHealth+value<maxHealth){
+            currentHealth+=value;
+        }else{
+            currentHealth=maxHealth;
+        }
+
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))

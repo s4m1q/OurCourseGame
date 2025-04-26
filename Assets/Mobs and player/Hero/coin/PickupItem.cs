@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    public string itemName = "Coin";
+    public string itemName;
     public int value = 50;
 
     public int minRange=0;
@@ -50,15 +50,35 @@ public class PickupItem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"Player picked up {itemName}");
+            if(itemName=="Coin"){
+                Debug.Log($"Player picked up {itemName}");
 
-            PlayerController playerController = other.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                playerController.AddScore(value+Random.Range(minRange,maxRange));
+                PlayerController playerController = other.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.AddScore(value+Random.Range(minRange,maxRange));
+                }
+                Destroy(gameObject);
             }
-
-            Destroy(gameObject);
+            if(itemName=="HP"){
+                Debug.Log($"Player picked up {itemName}");
+                PlayerController playerController = other.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.AddHP(value+Random.Range(minRange,maxRange));
+                }
+                Destroy(gameObject);
+            }
+            if(itemName=="Stamina"){
+                Debug.Log($"Player picked up {itemName}");
+                PlayerController playerController = other.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.AddStamina(value+Random.Range(minRange,maxRange));
+                }
+                Destroy(gameObject);
+            }
+            
         }
     }
 }
