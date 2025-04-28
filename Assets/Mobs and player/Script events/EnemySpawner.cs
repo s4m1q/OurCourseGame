@@ -154,4 +154,17 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnedEnemies.RemoveAll(enemy => enemy == null);
     }
+
+    public int TotalEnemiesRemaining()
+{
+    CleanupNullEnemies();
+    return spawnedEnemies.Count;
+}
+
+public bool IsAllWavesFinished()
+{
+    return currentWave > totalWaves;
+}
+
+
 }
