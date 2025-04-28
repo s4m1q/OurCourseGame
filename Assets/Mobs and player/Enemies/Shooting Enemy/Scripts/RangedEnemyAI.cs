@@ -15,6 +15,9 @@ public class RangedEnemyAI : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 5f;
 
+    public GameObject dropPrefab;
+    public float dropChance = 0.8f;
+
     public Transform player;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -196,6 +199,11 @@ public class RangedEnemyAI : MonoBehaviour
 
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null) rb.simulated = false;
+
+        if (dropPrefab != null && Random.value < dropChance)
+        {
+            Instantiate(dropPrefab, transform.position, Quaternion.identity);
+        }
 
         Destroy(gameObject, 2f);
     }

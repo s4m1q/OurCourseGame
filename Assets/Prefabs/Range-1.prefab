@@ -135,6 +135,9 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 1724131264750999263}
   projectileSpeed: 5
+  dropPrefab: {fileID: 5808691712331237788, guid: 15831508948c6c747b1b644f0089b113,
+    type: 3}
+  dropChance: 0.8
   player: {fileID: 0}
   stunDuration: 0.2
 --- !u!61 &1803642018436203371
