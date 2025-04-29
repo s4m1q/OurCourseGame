@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: 58287dae3d94e5a4fa4b2986c784e393
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 758214109659914
+    second: port2_0
+  - first:
+      213: -6238138570369930608
+    second: port2_1
+  - first:
+      213: 6517883510788962859
+    second: port2_2
+  - first:
+      213: 6243414146860593598
+    second: port2_3
+  - first:
+      213: 4707443105220029865
+    second: port2_4
+  - first:
+      213: -1808599841424030999
+    second: port2_5
+  - first:
+      213: -3984262205511885718
+    second: port2_6
+  - first:
+      213: 9088243195198031529
+    second: port2_7
+  - first:
+      213: -5980060693731434535
+    second: port2_8
+  - first:
+      213: -3236429417364696180
+    second: port2_9
+  - first:
+      213: -6818085149038053778
+    second: port2_10
+  - first:
+      213: 406499803152960061
+    second: port2_11
+  - first:
+      213: 7450031549811195233
+    second: port2_12
+  - first:
+      213: 4149978025139733465
+    second: port2_13
+  - first:
+      213: -4098701139963692586
+    second: port2_14
+  - first:
+      213: -1468201243058519915
+    second: port2_15
+  - first:
+      213: 2549540249596323277
+    second: port2_16
+  - first:
+      213: -2130689289351940470
+    second: port2_17
+  - first:
+      213: -6302635970877031499
+    second: port2_18
+  - first:
+      213: 997917724609429701
+    second: port2_19
+  - first:
+      213: 531619766813441095
+    second: port2_20
+  - first:
+      213: 2912524531033426591
+    second: port2_21
+  - first:
+      213: -9062548630200993301
+    second: port2_22
+  - first:
+      213: 8872676568025541796
+    second: port2_23
+  - first:
+      213: 482004077668277631
+    second: port2_24
+  - first:
+      213: -2819643098643818569
+    second: port2_25
+  - first:
+      213: -2201561405983317229
+    second: port2_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: port2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63
+        height: 63
+      alignment: 9
+      pivot: {x: -0.015873017, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08230cfbbfb90954b9f8a9e2057f5419
+      internalID: -1025005948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5c3d5027caf01428436307840a1dc9
+      internalID: 639275372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88011f82f6d70bd438de456a48820ebe
+      internalID: -2122404996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533b0cf4b92575549b26c3e256eceae3
+      internalID: 1778840506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59ea328344ca234ca1d268184d3acfe
+      internalID: -111206901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3281353313d11d54682cef6ac6636823
+      internalID: 1602063220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f7285c076119b46a564297b23b0a0e
+      internalID: 1147030428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_7
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db446426df4cc140909e32c824b6c93
+      internalID: -1888035408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: port2_8
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 0
+        width: 64
+        height: 63
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b8d8a2bac4fc74ab8c9c72a93956bc
+      internalID: 534008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7f4f716ae17765648bf57d6961d4f897
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      port2_0: -1025005948
+      port2_1: 639275372
+      port2_2: -2122404996
+      port2_3: 1778840506
+      port2_4: -111206901
+      port2_5: 1602063220
+      port2_6: 1147030428
+      port2_7: -1888035408
+      port2_8: 534008
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
