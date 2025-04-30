@@ -26,6 +26,26 @@ public class AbilityUpgradeUI : MonoBehaviour
 
     public PlayerController player;
 
+    [Header("Улучшение ХП и Стамины")]
+    public Button healthUpgradeButton;
+    public TextMeshProUGUI healthCostText;
+    public TextMeshProUGUI currentMaxHealthText;
+
+    public Button staminaUpgradeButton;
+    public TextMeshProUGUI staminaCostText;
+    public TextMeshProUGUI currentMaxStaminaText;
+
+    private int healthUpgradeLevel = 0;
+    private int staminaUpgradeLevel = 0;
+
+    [Header("Удар с руки")]
+    public Button meleeUpgradeButton;
+    public Text meleeLevelText;
+    public TextMeshProUGUI meleeCostText;
+    public combat meleeAttack;
+    private int meleeUpgradeLevel = 0;
+
+
     // Массив цен по уровням (индекс соответствует уровню: 1 => 150, 2 => 250 и т.д.)
     private int[] upgradePrices = { 150, 250, 400, 600, 750, 1000 };
 
@@ -37,6 +57,10 @@ public class AbilityUpgradeUI : MonoBehaviour
         abilityOneUpgradeButton.onClick.AddListener(UpgradeAbilityOne);
         abilityTwoUpgradeButton.onClick.AddListener(UpgradeAbilityTwo);
         abilityThreeUpgradeButton.onClick.AddListener(UpgradeAbilityThree);
+        healthUpgradeButton.onClick.AddListener(UpgradeHealth);
+        staminaUpgradeButton.onClick.AddListener(UpgradeStamina);
+        meleeUpgradeButton.onClick.AddListener(UpgradeMeleeAttack);
+
         UpdateUI();
     }
 
@@ -59,6 +83,43 @@ public class AbilityUpgradeUI : MonoBehaviour
             UpdateUI();
         }
     }
+
+
+    void UpgradeHealth()
+{
+    if (healthUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[healthUpgradeLevel])
+    {
+        player.Coins -= upgradePrices[healthUpgradeLevel];
+        player.maxHealth += 15f;
+        player.currentHealth = player.maxHealth;
+        healthUpgradeLevel++;
+        UpdateUI();
+    }
+}
+
+void UpgradeMeleeAttack()
+{
+    if (meleeUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[meleeUpgradeLevel])
+    {
+        player.Coins -= upgradePrices[meleeUpgradeLevel];
+        meleeUpgradeLevel++;
+        UpdateUI();
+    }
+}
+
+
+
+void UpgradeStamina()
+{
+    if (staminaUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[staminaUpgradeLevel])
+    {
+        player.Coins -= upgradePrices[staminaUpgradeLevel];
+        player.maxStamina += 10f;
+        player.currentStamina = player.maxStamina;
+        staminaUpgradeLevel++;
+        UpdateUI();
+    }
+}
 
     void UpgradeAbilityTwo()
     {
@@ -94,6 +155,17 @@ public class AbilityUpgradeUI : MonoBehaviour
         abilityOneCostText.text = GetCostText(abilityOne.CurrentLevel);
         abilityTwoCostText.text = GetCostText(abilityTwo.CurrentLevel);
         abilityThreeCostText.text = GetCostText(abilityThree.CurrentLevel);
+
+        healthCostText.text = GetHPUpgradeCostText(healthUpgradeLevel);
+        staminaCostText.text = GetStaminaUpgradeCostText(staminaUpgradeLevel);
+
+        currentMaxHealthText.text = $"Макс. Здоровье: {player.maxHealth}";
+        currentMaxStaminaText.text = $"Макс. Стамина: {player.maxStamina}";
+
+        meleeLevelText.text = $"Уровень: {meleeUpgradeLevel}";
+    meleeCostText.text = GetCostText(meleeUpgradeLevel);
+
+
     }
 
     string GetCostText(int currentLevel)
@@ -107,6 +179,23 @@ public class AbilityUpgradeUI : MonoBehaviour
             return "Макс. уровень";
         }
     }
+
+    string GetHPUpgradeCostText(int level)
+    {
+        if (level < upgradePrices.Length)
+            return $"Цена: {upgradePrices[level]}";
+        else
+            return "Макс. уровень";
+    }
+
+    string GetStaminaUpgradeCostText(int level)
+    {
+        if (level < upgradePrices.Length)
+            return $"Цена: {upgradePrices[level]}";
+        else
+            return "Макс. уровень";
+    }
+
 
     public void ForceOpen()
     {
