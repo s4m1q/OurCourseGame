@@ -1,0 +1,450 @@
+fileFormatVersion: 2
+guid: 7a8ec876f3ce22c4d8493ceb7992d135
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 889255754837785782
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_0"
+  - first:
+      213: 796134287405787722
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_1"
+  - first:
+      213: 7556006127333300372
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_2"
+  - first:
+      213: -2383144834559508402
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_3"
+  - first:
+      213: -7075583353196790037
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_4"
+  - first:
+      213: -6947516323521074762
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_5"
+  - first:
+      213: -2730034827471389179
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_6"
+  - first:
+      213: 8864745383839247067
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_7"
+  - first:
+      213: 2569959496844219891
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_8"
+  - first:
+      213: 528083827892527089
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_9"
+  - first:
+      213: 6739502017556331534
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_10"
+  - first:
+      213: -8660026980973405530
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_11"
+  - first:
+      213: -2739698969512768172
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_12"
+  - first:
+      213: 8290481530712036769
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_13"
+  - first:
+      213: -2010149259923863178
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_14"
+  - first:
+      213: 2798126927322456663
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_15"
+  - first:
+      213: 6943217605443555266
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_16"
+  - first:
+      213: -7043616724337368915
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_17"
+  - first:
+      213: -4586279119235842107
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_18"
+  - first:
+      213: -6638519127645634754
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_19"
+  - first:
+      213: 6162163989659050044
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_20"
+  - first:
+      213: -4325464033663325953
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_21"
+  - first:
+      213: 7434983647520627227
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_22"
+  - first:
+      213: 7994319943154913467
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_23"
+  - first:
+      213: -8236424927009039072
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_24"
+  - first:
+      213: 3983446443234847647
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_25"
+  - first:
+      213: 2060156853235813335
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_26"
+  - first:
+      213: 2285849350087878304
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_27"
+  - first:
+      213: 2583936437017778412
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_28"
+  - first:
+      213: -2436778143229340886
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_29"
+  - first:
+      213: -8607907702674929943
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_30"
+  - first:
+      213: -7315790699962136714
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_31"
+  - first:
+      213: -5146440141651863094
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_32"
+  - first:
+      213: -5766931250989509117
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_33"
+  - first:
+      213: 211509406665360603
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_34"
+  - first:
+      213: -1499178447109459959
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_35"
+  - first:
+      213: -5709167111337021234
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_36"
+  - first:
+      213: -333413287447141315
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_37"
+  - first:
+      213: -351888961758319219
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_38"
+  - first:
+      213: 5471040629492842563
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_39"
+  - first:
+      213: -7234245321561635878
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_40"
+  - first:
+      213: -3035013391617664855
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_41"
+  - first:
+      213: 948389055291590834
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_42"
+  - first:
+      213: 1546211194702902098
+    second: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+      (1)_43"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bcf395c565475c00800000000000000
+      internalID: 889255754837785782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_1"
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4aa4529aef6c0b00800000000000000
+      internalID: 796134287405787722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_2"
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49850641a835cd860800000000000000
+      internalID: 7556006127333300372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_3"
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4006cf366e5deed0800000000000000
+      internalID: -2383144834559508402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_4"
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beeb906ad6a7ecd90800000000000000
+      internalID: -7075583353196790037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom
+        (1)_5"
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b96c4996b6759f90800000000000000
+      internalID: -6947516323521074762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a24bd5051ebd4e94497fa3ec38d4b567
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_0": 889255754837785782
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_1": 796134287405787722
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_2": 7556006127333300372
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_3": -2383144834559508402
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_4": -7075583353196790037
+      "\u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435_2025-05-02_210609080-Photoroom (1)_5": -6947516323521074762
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
