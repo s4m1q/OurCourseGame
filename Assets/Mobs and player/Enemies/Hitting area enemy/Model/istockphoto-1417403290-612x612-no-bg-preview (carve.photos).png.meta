@@ -145,6 +145,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -447,7 +460,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_0: -6878995076698098541
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_1: 5430767440673423482
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_10: -8117652079194191196
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_11: -7494484527204019220
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_12: -74460166992132997
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_2: 1981685960550549807
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_3: 7685440358996647913
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_4: -2407480118375430956
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_5: -8269484601724725636
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_6: 4984701154087274306
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_7: -1695772338338876995
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_8: 1775440809022376072
+      istockphoto-1417403290-612x612-no-bg-preview (carve.photos)_9: 4436420700679371705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

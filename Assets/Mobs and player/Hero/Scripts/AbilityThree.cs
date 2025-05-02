@@ -50,6 +50,7 @@ public class AbilityThree : MonoBehaviour
                     col.GetComponent<EnemyAI>()?.TakeDamage(data.Damage);
                     col.GetComponent<RangedEnemyAI>()?.TakeDamage(data.Damage);
                     col.GetComponent<TankAI>()?.TakeDamage(data.Damage);
+                    col.GetComponent<RangeZonaEnemyAI>()?.TakeDamage(data.Damage);
                 }
             }
 

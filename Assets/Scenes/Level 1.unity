@@ -9504,7 +9504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &129478403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67566,7 +67566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1212541409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90396,6 +90396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7095090319b41428d04e8402606024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3769430335608393992}
+  healthText: {fileID: 126032959}
+  staminaText: {fileID: 1919437839}
+  coinText: {fileID: 1845519492}
+  healthBox: {fileID: 1583836241}
+  staminaBox: {fileID: 114207426}
+  coinBox: {fileID: 1274534334}
 --- !u!1 &1621623328
 GameObject:
   m_ObjectHideFlags: 0

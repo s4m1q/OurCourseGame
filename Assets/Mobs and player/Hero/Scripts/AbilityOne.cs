@@ -64,7 +64,7 @@ public class AbilityOne : MonoBehaviour
                         EnemyAI enemy = col.GetComponent<EnemyAI>();
                         RangedEnemyAI enemy1 = col.GetComponent<RangedEnemyAI>();
                         TankAI enemy2 = col.GetComponent<TankAI>();
-                        
+                        RangeZonaEnemyAI enemy3 = col.GetComponent<RangeZonaEnemyAI>();
                         if (enemy != null)
                         {
                             enemy.TakeDamage(damage);
@@ -78,6 +78,11 @@ public class AbilityOne : MonoBehaviour
                         if (enemy2 != null)
                         {
                             enemy2.TakeDamage(damage);
+                            Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
+                        }
+                        if (enemy3 != null)
+                        {
+                            enemy3.TakeDamage(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                     }

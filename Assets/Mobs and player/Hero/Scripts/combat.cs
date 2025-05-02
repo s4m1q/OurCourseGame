@@ -42,6 +42,8 @@ public class combat : MonoBehaviour
 
                 if (enemy.TryGetComponent(out vase vaseComponent))
                     vaseComponent.TakeDamage(currentDamage);
+                if (enemy.TryGetComponent(out RangeZonaEnemyAI rangezonaEnemy))
+                    rangezonaEnemy.TakeDamage(currentDamage);
             }
         }
     }
