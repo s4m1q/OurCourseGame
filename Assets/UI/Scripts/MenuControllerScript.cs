@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     public void PlayGame()
     {
         // Здесь можно загрузить сцену игры
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("IntroScene");
     }
 
     public void OpenSettings()
