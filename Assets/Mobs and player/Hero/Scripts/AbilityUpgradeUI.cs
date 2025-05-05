@@ -148,9 +148,9 @@ void UpgradeStamina()
 
     void UpdateUI()
     {
-        abilityOneLevelText.text = $"Уровень: {abilityOne.CurrentLevel}";
-        abilityTwoLevelText.text = $"Уровень: {abilityTwo.CurrentLevel}";
-        abilityThreeLevelText.text = $"Уровень: {abilityThree.CurrentLevel}";
+        abilityOneLevelText.text = $"Level: {abilityOne.CurrentLevel}";
+        abilityTwoLevelText.text = $"Level: {abilityTwo.CurrentLevel}";
+        abilityThreeLevelText.text = $"Level: {abilityThree.CurrentLevel}";
 
         abilityOneCostText.text = GetCostText(abilityOne.CurrentLevel);
         abilityTwoCostText.text = GetCostText(abilityTwo.CurrentLevel);
@@ -159,10 +159,10 @@ void UpgradeStamina()
         healthCostText.text = GetHPUpgradeCostText(healthUpgradeLevel);
         staminaCostText.text = GetStaminaUpgradeCostText(staminaUpgradeLevel);
 
-        currentMaxHealthText.text = $"Макс. Здоровье: {player.maxHealth}";
-        currentMaxStaminaText.text = $"Макс. Стамина: {player.maxStamina}";
+        currentMaxHealthText.text = $"Max HP: {player.maxHealth}";
+        currentMaxStaminaText.text = $"Max stamina: {player.maxStamina}";
 
-        meleeLevelText.text = $"Уровень: {meleeUpgradeLevel}";
+        meleeLevelText.text = $"Level: {meleeUpgradeLevel}";
     meleeCostText.text = GetCostText(meleeUpgradeLevel);
 
 
@@ -172,28 +172,28 @@ void UpgradeStamina()
     {
         if (currentLevel < upgradePrices.Length)
         {
-            return $"Цена: {upgradePrices[currentLevel]}";
+            return $"Cost: {upgradePrices[currentLevel]}";
         }
         else
         {
-            return "Макс. уровень";
+            return "Max. level";
         }
     }
 
     string GetHPUpgradeCostText(int level)
     {
         if (level < upgradePrices.Length)
-            return $"Цена: {upgradePrices[level]}";
+            return $"Cost: {upgradePrices[level]}";
         else
-            return "Макс. уровень";
+            return "Max. level";
     }
 
     string GetStaminaUpgradeCostText(int level)
     {
         if (level < upgradePrices.Length)
-            return $"Цена: {upgradePrices[level]}";
+            return $"Cost: {upgradePrices[level]}";
         else
-            return "Макс. уровень";
+            return "Max. level";
     }
 
 

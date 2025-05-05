@@ -4,7 +4,7 @@ public class MenuController : MonoBehaviour
 {
     public GameObject settingsPanel; // Ссылка на панель настроек
     public GameObject MenuPanel;
-
+    public GameObject achievementsUI;
     public void PlayGame()
     {
         // Здесь можно загрузить сцену игры
@@ -18,11 +18,14 @@ public class MenuController : MonoBehaviour
         settingsPanel.SetActive(true);
     }
 
+    
+
     public void ViewProgress()
     {
-        // Здесь можно открыть меню прогресса
-        Debug.Log("Viewing Progress...");
+        MenuPanel.SetActive(false);
+        achievementsUI.SetActive(true);
     }
+
 
     public void ExitGame()
     {
