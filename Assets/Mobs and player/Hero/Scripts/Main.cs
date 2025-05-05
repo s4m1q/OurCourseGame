@@ -173,8 +173,13 @@ public class PlayerController : MonoBehaviour
             currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
         }
     }
-    public void AddScore(int value){
+    int fl = 0;
+    public void AddScore(int value) {
         Coins+=value;
+        if (Coins >= 100 && fl == 0){
+            AchievementManager.Instance.UnlockAchievement("100 монет");
+            fl = 1;
+            }
     }
     public void TakeDamage(float damage)
     {

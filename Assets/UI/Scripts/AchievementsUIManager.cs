@@ -16,7 +16,7 @@ public class AchievementsUIManager : MonoBehaviour
     void Start()
     {
         ShowPage(0);
-
+        
         nextButton.onClick.AddListener(NextPage);
         prevButton.onClick.AddListener(PreviousPage);
         exitButton.onClick.AddListener(ExitToMainMenu);
