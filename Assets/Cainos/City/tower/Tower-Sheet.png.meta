@@ -168,6 +168,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -734,7 +760,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tower-Sheet_0: 2957776901332514128
+      Tower-Sheet_1: -4290950164130627415
+      Tower-Sheet_10: -6573474838091208134
+      Tower-Sheet_11: 3579264163604035106
+      Tower-Sheet_12: 3934090966142071048
+      Tower-Sheet_13: 7198567308650943160
+      Tower-Sheet_14: -5424691204629722506
+      Tower-Sheet_15: 8339561535396426898
+      Tower-Sheet_16: -3491993969797381183
+      Tower-Sheet_17: -2843817229150642186
+      Tower-Sheet_18: -5553666108580906378
+      Tower-Sheet_19: -8129002215468855577
+      Tower-Sheet_2: 8864651053526368615
+      Tower-Sheet_20: -6828510450814355589
+      Tower-Sheet_21: -1851281998201833981
+      Tower-Sheet_22: 6811780588940994965
+      Tower-Sheet_23: 5628311475628166955
+      Tower-Sheet_24: -7393362047073745715
+      Tower-Sheet_3: -6149955979111350123
+      Tower-Sheet_4: 8708866405120284101
+      Tower-Sheet_5: -1173556452795134592
+      Tower-Sheet_6: 4015292943814407837
+      Tower-Sheet_7: 7966728509460790125
+      Tower-Sheet_8: 161945565320299708
+      Tower-Sheet_9: 2672966028111124222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -190,7 +190,6 @@ public class AbilityUpgradeUI : MonoBehaviour
         }
         else
         {   
-            //AchievementConditions.OnUpgradeAbilityToMaxLevel(nameAbility);
             return "Max. level";
         }
     }

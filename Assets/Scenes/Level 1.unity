@@ -122295,6 +122295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7974485183070924847, guid: cc3bbfb5d34ba2840825824f60d2dc41,
+        type: 3}
+      propertyPath: Levels.Array.data[5].Damage
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

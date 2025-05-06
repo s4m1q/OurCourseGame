@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -68,21 +69,25 @@ public class AbilityOne : MonoBehaviour
                         if (enemy != null)
                         {
                             enemy.TakeDamage(damage);
+                            AchievementConditions.Ondamaged(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                         if (enemy1 != null)
                         {
                             enemy1.TakeDamage(damage);
+                            AchievementConditions.Ondamaged(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                         if (enemy2 != null)
                         {
                             enemy2.TakeDamage(damage);
+                            AchievementConditions.Ondamaged(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                         if (enemy3 != null)
                         {
                             enemy3.TakeDamage(damage);
+                            AchievementConditions.Ondamaged(damage);
                             Debug.Log($"Нанесено {damage} урона врагу на расстоянии {distance:F2}");
                         }
                     }

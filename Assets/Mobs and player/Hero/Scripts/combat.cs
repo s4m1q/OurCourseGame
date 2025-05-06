@@ -22,7 +22,7 @@ public class combat : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("HeroKnight_Attack"))
         {
             animator.SetTrigger("Attack");
-
+            AchievementConditions.OnCombatsWere();
             int index = Mathf.Clamp(attackLevel - 1, 0, Mathf.Min(attackDamageByLevel.Length, attackRangeByLevel.Length) - 1);
             int currentDamage = attackDamageByLevel[index];
             float currentRange = attackRangeByLevel[index];
@@ -31,19 +31,28 @@ public class combat : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                if (enemy.TryGetComponent(out EnemyAI enemyAI))
+                if (enemy.TryGetComponent(out EnemyAI enemyAI)) {
+                    AchievementConditions.Ondamaged(currentDamage);
                     enemyAI.TakeDamage(currentDamage);
+                    }
 
-                if (enemy.TryGetComponent(out RangedEnemyAI rangedEnemy))
+                if (enemy.TryGetComponent(out RangedEnemyAI rangedEnemy)) {
+                    AchievementConditions.Ondamaged(currentDamage);
                     rangedEnemy.TakeDamage(currentDamage);
+                }
 
-                if (enemy.TryGetComponent(out TankAI tank))
+                if (enemy.TryGetComponent(out TankAI tank)) {
+                    AchievementConditions.Ondamaged(currentDamage);
                     tank.TakeDamage(currentDamage);
+                }
 
                 if (enemy.TryGetComponent(out vase vaseComponent))
                     vaseComponent.TakeDamage(currentDamage);
-                if (enemy.TryGetComponent(out RangeZonaEnemyAI rangezonaEnemy))
+
+                if (enemy.TryGetComponent(out RangeZonaEnemyAI rangezonaEnemy)) {
+                    AchievementConditions.Ondamaged(currentDamage);
                     rangezonaEnemy.TakeDamage(currentDamage);
+                }
             }
         }
     }
