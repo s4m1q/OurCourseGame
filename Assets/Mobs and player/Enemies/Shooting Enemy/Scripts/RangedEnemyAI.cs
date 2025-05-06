@@ -179,7 +179,10 @@ public class RangedEnemyAI : MonoBehaviour
 
     void Die()
     {
-        if (isDead) return;
+        AchievementConditions.OnEnemyKilled();
+        if (isDead) {
+            return;
+            }
         isDead = true;
 
         if (animator != null)

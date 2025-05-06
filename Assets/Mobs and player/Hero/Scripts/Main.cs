@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         if(currentHealth+value<maxHealth){
             currentHealth+=value;
-        }else{
+        }
+        else{
             currentHealth=maxHealth;
         }
 
@@ -173,13 +174,10 @@ public class PlayerController : MonoBehaviour
             currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
         }
     }
-    int fl = 0;
+    
     public void AddScore(int value) {
         Coins+=value;
-        if (Coins >= 100 && fl == 0){
-            AchievementManager.Instance.UnlockAchievement("100 монет");
-            fl = 1;
-            }
+        AchievementConditions.OnCoinCollected(Coins);
     }
     public void TakeDamage(float damage)
     {

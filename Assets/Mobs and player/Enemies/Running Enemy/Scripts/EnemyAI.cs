@@ -187,7 +187,10 @@ public class EnemyAI : MonoBehaviour
     // Метод для смерти врага
     private void Die()
     {
-        if (isDead) return;
+        AchievementConditions.OnEnemyKilled();
+        if (isDead) {
+            return;
+            }
         isDead = true;
         Debug.Log("Пытаемся запустить анимацию смерти");
 

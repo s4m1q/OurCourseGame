@@ -29,7 +29,7 @@ public class AbilityTwo : MonoBehaviour
             Debug.LogWarning("Некорректный уровень способности 2 или отсутствуют данные уровней.");
             return;
         }
-
+        
         AbilityTwoLevelData data = Levels[CurrentLevel - 1];
 
         if (Time.time - lastUseTime < data.cooldown)
@@ -39,7 +39,7 @@ public class AbilityTwo : MonoBehaviour
         }
 
         lastUseTime = Time.time;
-
+        AchievementConditions.OnAbilityUsed();
         player.currentHealth += data.healthRestore;
         player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
 

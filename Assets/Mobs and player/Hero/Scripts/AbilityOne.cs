@@ -26,7 +26,7 @@ public class AbilityOne : MonoBehaviour
             // Здесь должна запускаться анимация и звук:
             // AnimationHandler.Play("AbilityOne");
             // AudioManager.Play("AbilityOneSFX");
-
+            AchievementConditions.OnAbilityUsed();
             StartCoroutine(TryUse());
         }
         else

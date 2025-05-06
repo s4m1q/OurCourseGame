@@ -15,6 +15,7 @@ public class AbilityManager : MonoBehaviour
     private AbilityTwo abilityTwo;
     private AbilityThree abilityThree;
 
+
     private KeyCode ability1Key;
     private KeyCode ability2Key;
     private KeyCode ability3Key;
@@ -34,9 +35,19 @@ public class AbilityManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(ability1Key)) abilityOne.UseAbility();
-        if (Input.GetKeyDown(ability2Key)) abilityTwo.UseAbility();
-        if (Input.GetKeyDown(ability3Key)) abilityThree.UseAbility();
+        if (Input.GetKeyDown(ability1Key)) {
+            abilityOne.UseAbility();
+            
+        }
+        if (Input.GetKeyDown(ability2Key)) {
+            abilityTwo.UseAbility();
+            
+        }
+        if (Input.GetKeyDown(ability3Key)) {
+            abilityThree.UseAbility();
+            
+        }
+        
     }
 
     public void SetAbilityKey(int abilityNumber, KeyCode newKey)

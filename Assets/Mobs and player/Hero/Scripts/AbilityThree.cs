@@ -23,6 +23,7 @@ public class AbilityThree : MonoBehaviour
         if (!isOnCooldown)
         {
             Debug.Log("Использована способность 3");
+            AchievementConditions.OnAbilityUsed();
             StartCoroutine(ApplyPoisonAura());
         }
         else

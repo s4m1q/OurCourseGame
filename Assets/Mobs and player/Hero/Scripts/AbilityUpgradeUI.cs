@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro; // Не забудь подключить TextMeshPro
 
 public class AbilityUpgradeUI : MonoBehaviour
-{
+{      
     public GameObject upgradePanel;
 
     [Header("Способность 1")]
@@ -51,6 +51,9 @@ public class AbilityUpgradeUI : MonoBehaviour
 
     private bool isPanelOpen = false;
 
+    private bool WasNotification1 = false;
+    private bool WasNotification2 = false;
+    private bool WasNotification3 = false;
     void Start()
     {
         upgradePanel.SetActive(false);
@@ -71,6 +74,21 @@ public class AbilityUpgradeUI : MonoBehaviour
             isPanelOpen = !isPanelOpen;
             upgradePanel.SetActive(isPanelOpen);
             Time.timeScale = isPanelOpen ? 0f : 1f;
+
+            if (abilityThree.CurrentLevel == 6 && !WasNotification3) {
+                AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability Three");
+                WasNotification3 = true;
+            }
+            if (abilityTwo.CurrentLevel == 6 && !WasNotification2) {
+                AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability Two");
+                WasNotification2 = true;
+            }
+            if (abilityOne.CurrentLevel == 6 && !WasNotification1) {
+                AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability One");
+                WasNotification1 = true;
+            }
+            AchievementConditions.OnHealthIncreased(player.maxHealth);
+            AchievementConditions.OnStaminaIncreased(player.maxStamina);
         }
     }
 
@@ -84,42 +102,39 @@ public class AbilityUpgradeUI : MonoBehaviour
         }
     }
 
+    void UpgradeMeleeAttack()
+    {
+        if (meleeUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[meleeUpgradeLevel])
+        {
+            player.Coins -= upgradePrices[meleeUpgradeLevel];
+            meleeUpgradeLevel++;
+            UpdateUI();
+        }
+    }
 
     void UpgradeHealth()
-{
-    if (healthUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[healthUpgradeLevel])
     {
-        player.Coins -= upgradePrices[healthUpgradeLevel];
-        player.maxHealth += 15f;
-        player.currentHealth = player.maxHealth;
-        healthUpgradeLevel++;
-        UpdateUI();
+        if (healthUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[healthUpgradeLevel])
+        {
+            player.Coins -= upgradePrices[healthUpgradeLevel];
+            player.maxHealth += 15f;
+            player.currentHealth = player.maxHealth;
+            healthUpgradeLevel++;
+            UpdateUI();
+        }
     }
-}
 
-void UpgradeMeleeAttack()
-{
-    if (meleeUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[meleeUpgradeLevel])
+    void UpgradeStamina()
     {
-        player.Coins -= upgradePrices[meleeUpgradeLevel];
-        meleeUpgradeLevel++;
-        UpdateUI();
+        if (staminaUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[staminaUpgradeLevel])
+        {
+            player.Coins -= upgradePrices[staminaUpgradeLevel];
+            player.maxStamina += 10f;
+            player.currentStamina = player.maxStamina;
+            staminaUpgradeLevel++;
+            UpdateUI();
+        }
     }
-}
-
-
-
-void UpgradeStamina()
-{
-    if (staminaUpgradeLevel < upgradePrices.Length && player.Coins >= upgradePrices[staminaUpgradeLevel])
-    {
-        player.Coins -= upgradePrices[staminaUpgradeLevel];
-        player.maxStamina += 10f;
-        player.currentStamina = player.maxStamina;
-        staminaUpgradeLevel++;
-        UpdateUI();
-    }
-}
 
     void UpgradeAbilityTwo()
     {
@@ -152,9 +167,9 @@ void UpgradeStamina()
         abilityTwoLevelText.text = $"Level: {abilityTwo.CurrentLevel}";
         abilityThreeLevelText.text = $"Level: {abilityThree.CurrentLevel}";
 
-        abilityOneCostText.text = GetCostText(abilityOne.CurrentLevel);
-        abilityTwoCostText.text = GetCostText(abilityTwo.CurrentLevel);
-        abilityThreeCostText.text = GetCostText(abilityThree.CurrentLevel);
+        abilityOneCostText.text = GetCostText(abilityOne.CurrentLevel, "Max Level of ability One");
+        abilityTwoCostText.text = GetCostText(abilityTwo.CurrentLevel, "Max Level of ability Two");
+        abilityThreeCostText.text = GetCostText(abilityThree.CurrentLevel, "Max Level of ability Three");
 
         healthCostText.text = GetHPUpgradeCostText(healthUpgradeLevel);
         staminaCostText.text = GetStaminaUpgradeCostText(staminaUpgradeLevel);
@@ -163,19 +178,19 @@ void UpgradeStamina()
         currentMaxStaminaText.text = $"Max stamina: {player.maxStamina}";
 
         meleeLevelText.text = $"Level: {meleeUpgradeLevel}";
-    meleeCostText.text = GetCostText(meleeUpgradeLevel);
-
+        meleeCostText.text = GetCostText(meleeUpgradeLevel, "Max Level of combat");
 
     }
 
-    string GetCostText(int currentLevel)
+    string GetCostText(int currentLevel, string nameAbility)
     {
         if (currentLevel < upgradePrices.Length)
         {
             return $"Cost: {upgradePrices[currentLevel]}";
         }
         else
-        {
+        {   
+            //AchievementConditions.OnUpgradeAbilityToMaxLevel(nameAbility);
             return "Max. level";
         }
     }
