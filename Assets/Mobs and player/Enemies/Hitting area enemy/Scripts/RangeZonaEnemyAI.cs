@@ -46,6 +46,11 @@ public class RangeZonaEnemyAI : MonoBehaviour
             navMeshAgent.updateUpAxis = false;
         }
 
+        if (GameManager.Instance != null)
+        {
+            maxHealth += GameManager.Instance.enemyHealthMultiplier;
+        }
+
         currentHealth = maxHealth;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;

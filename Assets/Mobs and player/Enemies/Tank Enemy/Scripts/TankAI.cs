@@ -40,6 +40,12 @@ public class TankAI : MonoBehaviour
             navMeshAgent.updateUpAxis = false; // Предотвращаем изменение вертикальной оси
         }
 
+        if (GameManager.Instance != null)
+        {
+            maxHealth += GameManager.Instance.enemyHealthMultiplier;
+            damage += GameManager.Instance.enemyDamageMultiplier;
+        }
+
         // Инициализация здоровья
         currentHealth = maxHealth;
         isDead = false;

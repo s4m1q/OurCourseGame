@@ -37,6 +37,11 @@ public class EnemySpawner : MonoBehaviour
     private float breakTimer;
     private List<GameObject> spawnedEnemies = new();
 
+    void Start()
+    {
+        totalWaves = GameManager.Instance != null ? GameManager.Instance.waveCount : totalWaves;
+    }
+
     void Update()
     {
         if (currentWave > totalWaves)

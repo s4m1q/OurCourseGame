@@ -7,6 +7,12 @@ public class FireZone : MonoBehaviour
 
     private void Start()
     {
+
+        if (GameManager.Instance != null)
+        {
+            damagePerSecond += GameManager.Instance.enemyDamageMultiplier;
+        }
+
         Destroy(gameObject, duration);
     }
 

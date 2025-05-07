@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FireballZone : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class FireballZone : MonoBehaviour
     private Vector3 targetPosition;
 
     public GameObject fireZonePrefab;
-
     private Animator animator;
 
     public void Initialize(Vector2 dir, Vector3 target)
@@ -29,6 +29,11 @@ public class FireballZone : MonoBehaviour
             animator.SetBool("IsBurning", true); // 🔥 Запускаем анимацию сразу
         }
 
+        if (GameManager.Instance != null)
+        {
+            damage += GameManager.Instance.enemyDamageMultiplier;
+        }
+
         Destroy(gameObject, lifeTime);
     }
 
@@ -36,10 +41,23 @@ public class FireballZone : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
+        // Проверка, если вне NavMesh — уничтожить
+        if (!IsOnNavMesh(transform.position))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
             LeaveFireZone();
         }
+    }
+
+    bool IsOnNavMesh(Vector3 position)
+    {
+        NavMeshHit hit;
+        return NavMesh.SamplePosition(position, out hit, 0.1f, NavMesh.AllAreas);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -62,6 +80,7 @@ public class FireballZone : MonoBehaviour
         {
             Instantiate(fireZonePrefab, transform.position, Quaternion.identity);
         }
+
         Destroy(gameObject);
     }
 }
