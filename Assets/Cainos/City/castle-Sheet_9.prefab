@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3278330183058624635}
   - component: {fileID: 7216188377701665664}
-  - component: {fileID: 8011511554948135833}
+  - component: {fileID: 2871756261343983470}
   m_Layer: 0
   m_Name: castle-Sheet_9
   m_TagString: Untagged
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8011511554948135833
-BoxCollider2D:
+--- !u!68 &2871756261343983470
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,14 +124,28 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.44, y: 3.7922776}
-    newSize: {x: 2.44, y: 3.7922776}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.44, y: 3.7922776}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.2098656, y: -1.5910959}
+  - {x: -1.1977113, y: -0.89601046}
+  - {x: -1.2166, y: -0.3898501}
+  - {x: -0.7668503, y: 0.3065831}
+  - {x: -0.5152353, y: 0.79327065}
+  - {x: -0.14441465, y: 1.4745502}
+  - {x: 0.4068491, y: 0.49053487}
+  - {x: 0.37511846, y: 0.08066118}
+  - {x: 0.47616652, y: 0.00050457567}
+  - {x: 0.522826, y: -0.31577486}
+  - {x: 0.9193245, y: -0.5568718}
+  - {x: 1.2120177, y: -0.9870497}
+  - {x: 1.1469593, y: -1.7207398}
+  - {x: 0.7251046, y: -1.8627154}
+  - {x: 0.4549852, y: -1.7545725}
+  - {x: 0.25543916, y: -1.8425789}
+  - {x: -0.39094695, y: -1.6191723}
+  - {x: -0.77009416, y: -1.7702848}
+  - {x: -1.1970468, y: -1.6012299}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

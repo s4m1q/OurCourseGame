@@ -416,6 +416,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: '[Free-Ver.]Tiles_14'
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 144
+        width: 10
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b30683170fc9047b2536d4c0a032c3
+      internalID: -1261874133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[Free-Ver.]Tiles_15'
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 120
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09a98958b7509248a35ab49087dda90
+      internalID: 1480298993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -434,6 +478,8 @@ TextureImporter:
       '[Free-Ver.]Tiles_11': 1431759745
       '[Free-Ver.]Tiles_12': 163828083
       '[Free-Ver.]Tiles_13': -1679825905
+      '[Free-Ver.]Tiles_14': -1261874133
+      '[Free-Ver.]Tiles_15': 1480298993
       '[Free-Ver.]Tiles_4': -526530489
       '[Free-Ver.]Tiles_5': -1118845518
       '[Free-Ver.]Tiles_6': 1835144342

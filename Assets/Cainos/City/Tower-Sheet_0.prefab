@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8008812939210079359}
   - component: {fileID: 8244968052065229626}
-  - component: {fileID: 3463175000219234794}
+  - component: {fileID: 799038680682444378}
   m_Layer: 0
   m_Name: Tower-Sheet_0
   m_TagString: Untagged
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3463175000219234794
+--- !u!61 &799038680682444378
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0008774996, y: -0.06932948}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,5 +133,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.34, y: 0.7}
+  m_Size: {x: 0.2557516, y: 0.24716447}
   m_EdgeRadius: 0
