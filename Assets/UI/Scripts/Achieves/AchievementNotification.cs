@@ -26,7 +26,6 @@ public class AchievementNotification : MonoBehaviour
         titleText.text = $"Достижение получено: {title}";
         StartCoroutine(AnimateRoutine());
     }
-
     private System.Collections.IEnumerator AnimateRoutine()
     {
         // Появление снизу + затухание

@@ -33064,7 +33064,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554347473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33072,9 +33072,9 @@ RectTransform:
   - {fileID: 1059716948}
   m_Father: {fileID: 1971695815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 350, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2550, y: -10}
   m_SizeDelta: {x: 350, y: 140}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &554347475
@@ -76604,8 +76604,8 @@ Transform:
   - {fileID: 1233031441}
   - {fileID: 1690306476}
   - {fileID: 2065794147}
-  - {fileID: 1971695815}
   - {fileID: 1839788149}
+  - {fileID: 1971695815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1378654325
@@ -110863,8 +110863,8 @@ RectTransform:
   - {fileID: 1805559413}
   - {fileID: 1306091979}
   - {fileID: 2103706844}
-  - {fileID: 554347474}
   - {fileID: 1431209661}
+  - {fileID: 554347474}
   m_Father: {fileID: 1377277906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -113076,28 +113076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3143371cfb0a3e542b95106166ac071d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allAchievements:
-  - kill 30 enemies
-  - kill 50 enemies
-  - kill 100 enemies
-  - kill 200 enemies
-  - kill 500 enemies
-  - Collect 500 coins
-  - Collect 1500 coins
-  - 50 attacks commited
-  - 150 attacks commited
-  - Use abilities 20 times
-  - Use abilities 50 time
-  - Deal 1000 damage
-  - Deal 5000 damage
-  - Got Max HP
-  - Got Max Stamina
-  - Upgrade Ability 1
-  - Upgrade Ability 2
-  - Upgrade Ability 3
   notificationPrefab: {fileID: 554347473}
-  notificationParent: {fileID: 1431209661}
-  canvas: {fileID: 1971695818}
+  notificationParent: {fileID: 1971695815}
 --- !u!4 &2003167954
 Transform:
   m_ObjectHideFlags: 0
