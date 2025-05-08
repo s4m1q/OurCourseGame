@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesPerSpawn = 1;           // Сколько врагов спавнить за раз
     public int enemiesPerWave = 20;           // Сколько врагов в первой волне
     public int waveEnemyIncrease = 5;         // На сколько увеличивать врагов с каждой волной
-    public int totalWaves = 4;                // Сколько всего волн
+    private int totalWaves;                // Сколько всего волн
     public float breakBetweenWaves = 60f;     // Пауза между волнами
 
     [Header("Настройки Surrounder")]
