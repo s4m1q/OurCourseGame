@@ -64,6 +64,19 @@ public class AbilityUpgradeUI : MonoBehaviour
         staminaUpgradeButton.onClick.AddListener(UpgradeStamina);
         meleeUpgradeButton.onClick.AddListener(UpgradeMeleeAttack);
 
+        abilityOne.CurrentLevel = PlayerStats.Instance.abilityOneLevel;
+        abilityTwo.CurrentLevel = PlayerStats.Instance.abilityTwoLevel;
+        abilityThree.CurrentLevel = PlayerStats.Instance.abilityThreeLevel;
+        meleeAttack.attackLevel = PlayerStats.Instance.meleeLevel;
+        meleeUpgradeLevel = PlayerStats.Instance.meleeLevel;
+        player.maxHealth = PlayerStats.Instance.maxHealth;
+        healthUpgradeLevel = PlayerStats.Instance.HealthLevel;
+        player.maxStamina = PlayerStats.Instance.maxStamina;
+        staminaUpgradeLevel = PlayerStats.Instance.StaminaLevel;
+
+        Debug.Log(PlayerStats.Instance.maxHealth);
+        player.Coins = PlayerStats.Instance.coins;
+        
         UpdateUI();
     }
 
@@ -98,6 +111,8 @@ public class AbilityUpgradeUI : MonoBehaviour
         {
             player.Coins -= upgradePrices[abilityOne.CurrentLevel];
             abilityOne.CurrentLevel++;
+            PlayerStats.Instance.abilityOneLevel = abilityOne.CurrentLevel;
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }
@@ -108,6 +123,8 @@ public class AbilityUpgradeUI : MonoBehaviour
         {
             player.Coins -= upgradePrices[meleeUpgradeLevel];
             meleeUpgradeLevel++;
+            PlayerStats.Instance.meleeLevel = meleeUpgradeLevel;
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }
@@ -120,6 +137,9 @@ public class AbilityUpgradeUI : MonoBehaviour
             player.maxHealth += 15f;
             player.currentHealth = player.maxHealth;
             healthUpgradeLevel++;
+            PlayerStats.Instance.HealthLevel = healthUpgradeLevel;
+            PlayerStats.Instance.maxHealth = player.maxHealth;
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }
@@ -132,6 +152,10 @@ public class AbilityUpgradeUI : MonoBehaviour
             player.maxStamina += 10f;
             player.currentStamina = player.maxStamina;
             staminaUpgradeLevel++;
+            PlayerStats.Instance.StaminaLevel = staminaUpgradeLevel;
+            PlayerStats.Instance.maxStamina = player.maxStamina;
+            //Debug.Log(PlayerStats.Instance.maxStamina);
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }
@@ -142,6 +166,8 @@ public class AbilityUpgradeUI : MonoBehaviour
         {
             player.Coins -= upgradePrices[abilityTwo.CurrentLevel];
             abilityTwo.CurrentLevel++;
+            PlayerStats.Instance.abilityTwoLevel = abilityTwo.CurrentLevel;
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }
@@ -152,6 +178,8 @@ public class AbilityUpgradeUI : MonoBehaviour
         {
             player.Coins -= upgradePrices[abilityThree.CurrentLevel];
             abilityThree.CurrentLevel++;
+            PlayerStats.Instance.abilityThreeLevel = abilityThree.CurrentLevel;
+            PlayerStats.Instance.coins = player.Coins;
             UpdateUI();
         }
     }

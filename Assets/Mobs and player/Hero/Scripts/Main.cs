@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Компонент для управления спрайтом
 
     // Параметры здоровья и стамины
-    public float maxHealth = 100f;
+    public float maxHealth = 250;
     public float currentHealth;
-    public float maxStamina = 100f;
+    public float maxStamina = 100;
     public int Coins = 0;
     public float currentStamina;
     public float staminaRegenRate = 10f; // Скорость восстановления стамины
@@ -178,6 +178,7 @@ public class PlayerController : MonoBehaviour
     public void AddScore(int value) {
         Coins+=value;
         AchievementConditions.OnCoinCollected(Coins);
+        PlayerStats.Instance.coins = Coins;
     }
     public void TakeDamage(float damage)
     {

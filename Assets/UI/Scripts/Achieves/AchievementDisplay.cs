@@ -17,7 +17,7 @@ public class AchievementDisplay : MonoBehaviour
         "Use abilities 20 times", "Use abilities 50 times", "Deal 1000 damage",
 
         "Deal 5000 damage", "Got Max HP", "Got Max Stamina",
-        "Upgrade Ability 1 to Max level", "Upgrade Ability 2 to Max level", "Upgrade Ability 3 to Max level"
+        "Max Level of ability One", "Max Level of ability Two", "Max Level of ability Three"
     };
 
     private Dictionary<string, TextMeshProUGUI> achievementTextMap = new();
