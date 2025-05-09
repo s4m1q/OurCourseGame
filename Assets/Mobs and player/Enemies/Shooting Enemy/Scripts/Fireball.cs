@@ -8,10 +8,13 @@ public class Fireball : MonoBehaviour
     public float lifeTime = 7f;
 
     private Vector2 direction;
+    private Vector3 targetPosition;
 
-    public void Initialize(Vector2 dir)
+    public void Initialize(Vector2 dir, Vector3 target)
     {
         direction = dir.normalized;
+        targetPosition = target;
+        targetPosition.z = 0f;
     }
 
     void Start()
@@ -29,19 +32,24 @@ public class Fireball : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-        // Проверяем, есть ли под фаерболом навмеш
+        /* //Проверяем, есть ли под фаерболом навмеш
         if (!IsOnNavMesh(transform.position))
         {
             Destroy(gameObject); // Уничтожить, если вне навмеша
-        }
+        } */
+
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            Destroy(gameObject);
+        } 
     }
 
-    bool IsOnNavMesh(Vector3 position)
+    /* bool IsOnNavMesh(Vector3 position)
     {
         NavMeshHit hit;
         // radius = 0.1f, чтобы проверить точку
         return NavMesh.SamplePosition(position, out hit, 0.1f, NavMesh.AllAreas);
-    }
+    } */
 
     void OnTriggerEnter2D(Collider2D other)
     {

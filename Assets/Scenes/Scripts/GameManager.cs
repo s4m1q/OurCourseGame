@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int currentLevel = 1;
-    public float enemyHealthMultiplier = 20f;
-    public float enemyDamageMultiplier = 5f;
+    public float enemyHealthMultiplier = 0f;
+    public float enemyDamageMultiplier = 0f;
     public int waveCount = 4;
+
+    private bool firstLoadDone = false;
 
     void Awake()
     {
@@ -26,13 +28,19 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Увеличиваем сложность при загрузке новой сцены
         if (scene.buildIndex != 0) // допустим, 0 — это главное меню
         {
-            currentLevel++;
-            enemyHealthMultiplier *= 1.2f;     
-            enemyDamageMultiplier *= 1.15f;
-            waveCount += 1;
+            if (firstLoadDone)
+            {
+                currentLevel++;
+                enemyHealthMultiplier += 20f;     
+                enemyDamageMultiplier += 5f;
+                waveCount += 1;
+            }
+            else
+            {
+                firstLoadDone = true; // Первый уровень загружен — больше не трогаем
+            }
         }
     }
 }

@@ -41,24 +41,24 @@ public class FireballZone : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-        // Проверка, если вне NavMesh — уничтожить
+/*         // Проверка, если вне NavMesh — уничтожить
         if (!IsOnNavMesh(transform.position))
         {
             Destroy(gameObject);
             return;
-        }
+        } */
 
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
         {
             LeaveFireZone();
-        }
+        } 
     }
 
-    bool IsOnNavMesh(Vector3 position)
+    /* bool IsOnNavMesh(Vector3 position)
     {
         NavMeshHit hit;
         return NavMesh.SamplePosition(position, out hit, 0.1f, NavMesh.AllAreas);
-    }
+    } */
 
     void OnTriggerEnter2D(Collider2D other)
     {

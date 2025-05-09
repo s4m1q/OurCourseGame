@@ -126,7 +126,7 @@ public class RangedEnemyAI : MonoBehaviour
             Fireball fb = fireball.GetComponent<Fireball>();
             if (fb != null)
             {
-                fb.Initialize(direction);
+                fb.Initialize(direction, targetPos);
             }
         }
 
