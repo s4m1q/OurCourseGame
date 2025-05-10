@@ -88923,7 +88923,7 @@ MonoBehaviour:
   currentLevel: 1
   enemyHealthMultiplier: 0
   enemyDamageMultiplier: 0
-  waveCount: 1
+  waveCount: 4
 --- !u!1001 &1672047035
 PrefabInstance:
   m_ObjectHideFlags: 0
