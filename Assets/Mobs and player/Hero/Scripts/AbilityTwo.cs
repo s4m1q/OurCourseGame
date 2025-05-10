@@ -16,7 +16,7 @@ public class AbilityTwo : MonoBehaviour
 
     private float lastUseTime = -Mathf.Infinity;
     private PlayerController player;
-
+    public SkillAnimatiionsController anime;
     private void Start()
     {
         player = GetComponent<PlayerController>();
@@ -24,13 +24,13 @@ public class AbilityTwo : MonoBehaviour
 
     public void UseAbility()
     {
-        if (Levels.Count == 0 || CurrentLevel <= 0 || CurrentLevel > Levels.Count)
+        if (CurrentLevel < 0 || CurrentLevel > Levels.Count)
         {
             Debug.LogWarning("Некорректный уровень способности 2 или отсутствуют данные уровней.");
             return;
         }
         
-        AbilityTwoLevelData data = Levels[CurrentLevel - 1];
+        AbilityTwoLevelData data = Levels[CurrentLevel];
 
         if (Time.time - lastUseTime < data.cooldown)
         {
@@ -45,7 +45,7 @@ public class AbilityTwo : MonoBehaviour
 
         player.currentStamina += data.staminaRestore;
         player.currentStamina = Mathf.Clamp(player.currentStamina, 0, player.maxStamina);
-
+        anime.On();
         Debug.Log($"Использована способность 2: +{data.healthRestore} HP, +{data.staminaRestore} стамина.");
     }
 }

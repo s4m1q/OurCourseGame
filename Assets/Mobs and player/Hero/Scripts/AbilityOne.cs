@@ -15,7 +15,7 @@ public class AbilityOne : MonoBehaviour
 {
     public List<AbilityOneLevelData> Levels = new List<AbilityOneLevelData>();
     public int CurrentLevel = 0;
-
+    public SkillAnimatiionsController anime;
     private bool isOnCooldown = false;
 
     public void UseAbility()
@@ -27,6 +27,7 @@ public class AbilityOne : MonoBehaviour
             // Здесь должна запускаться анимация и звук:
             // AnimationHandler.Play("AbilityOne");
             // AudioManager.Play("AbilityOneSFX");
+            anime.On();
             AchievementConditions.OnAbilityUsed();
             StartCoroutine(TryUse());
         }
