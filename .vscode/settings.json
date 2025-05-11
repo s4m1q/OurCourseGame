@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "courseWork.sln"
+    "dotnet.defaultSolution": "OurCourseGame.sln"
 }

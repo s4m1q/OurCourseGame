@@ -114173,6 +114173,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44391086133918950, guid: 39dcb0c1309343e428dea90cce28d0a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1074542235238453849, guid: 39dcb0c1309343e428dea90cce28d0a9,
         type: 3}
       propertyPath: player
@@ -114192,6 +114197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: breakBetweenWaves
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526990008772110494, guid: 39dcb0c1309343e428dea90cce28d0a9,
+        type: 3}
+      propertyPath: waveEnemyIncrease
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1640673528805342957, guid: 39dcb0c1309343e428dea90cce28d0a9,
         type: 3}
