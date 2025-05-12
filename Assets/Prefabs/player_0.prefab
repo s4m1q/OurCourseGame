@@ -194,7 +194,7 @@ MonoBehaviour:
   maxHealth: 250
   currentHealth: 0
   maxStamina: 100
-  Coins: 400
+  Coins: 1000
   currentStamina: 0
   staminaRegenRate: 10
   staminaDrainRate: 20
@@ -238,24 +238,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Levels:
-  - Damage: 20
+  - Damage: 45
     Radius: 5
     Cooldown: 12
-  - Damage: 25
+  - Damage: 50
     Radius: 10
     Cooldown: 10
-  - Damage: 35
+  - Damage: 55
     Radius: 6
     Cooldown: 10
-  - Damage: 40
+  - Damage: 60
     Radius: 7
     Cooldown: 8
-  - Damage: 45
+  - Damage: 70
     Radius: 8
     Cooldown: 6
-  - Damage: 60
+  - Damage: 80
     Radius: 9
     Cooldown: 4
+  - Damage: 90
+    Radius: 9
+    Cooldown: 3
+  - Damage: 120
+    Radius: 9
+    Cooldown: 2
   CurrentLevel: 0
   anime: {fileID: 5326827919195526231}
 --- !u!114 &1700514646860400128
@@ -289,7 +295,16 @@ MonoBehaviour:
   - healthRestore: 85
     staminaRestore: 70
     cooldown: 5
-  CurrentLevel: 1
+  - healthRestore: 95
+    staminaRestore: 80
+    cooldown: 4
+  - healthRestore: 120
+    staminaRestore: 100
+    cooldown: 4
+  - healthRestore: 150
+    staminaRestore: 120
+    cooldown: 3
+  CurrentLevel: 0
   anime: {fileID: 8454525860894252771}
 --- !u!114 &1965011541216390883
 MonoBehaviour:
@@ -320,6 +335,12 @@ MonoBehaviour:
     Radius: 9
     Cooldown: 7
   - Damage: 45
+    Radius: 10
+    Cooldown: 6
+  - Damage: 50
+    Radius: 10
+    Cooldown: 6
+  - Damage: 75
     Radius: 10
     Cooldown: 6
   CurrentLevel: 0

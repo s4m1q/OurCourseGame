@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
-
 [System.Serializable]
 public class AbilityThreeLevelData
 {
@@ -26,7 +24,8 @@ public class AbilityThree : MonoBehaviour
         new KeyValuePair<float, float>(17.55f, 13f),
         new KeyValuePair<float, float>(18.9f, 14f),
         new KeyValuePair<float, float>(20.25f, 15f),
-        new KeyValuePair<float, float>(21.6f, 16f)
+        new KeyValuePair<float, float>(21.6f, 16f),
+        new KeyValuePair<float, float>(22.95f, 17f)
     };
     
     public GameObject anime;
@@ -60,6 +59,8 @@ public class AbilityThree : MonoBehaviour
             case 5: anime.transform.localScale = new Vector3(NewXYforAnime[5].Key, NewXYforAnime[5].Value, anime.transform.localScale.z); break;
             case 6: anime.transform.localScale = new Vector3(NewXYforAnime[6].Key, NewXYforAnime[6].Value, anime.transform.localScale.z); break;
             case 7: anime.transform.localScale = new Vector3(NewXYforAnime[7].Key, NewXYforAnime[7].Value, anime.transform.localScale.z); break;
+            case 8: anime.transform.localScale = new Vector3(NewXYforAnime[8].Key, NewXYforAnime[8].Value, anime.transform.localScale.z); break;
+            case 9: anime.transform.localScale = new Vector3(NewXYforAnime[8].Key, NewXYforAnime[8].Value, anime.transform.localScale.z); break;
             }
     }
 

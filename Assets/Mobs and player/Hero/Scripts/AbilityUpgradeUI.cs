@@ -47,7 +47,7 @@ public class AbilityUpgradeUI : MonoBehaviour
 
 
     // Массив цен по уровням (индекс соответствует уровню: 1 => 150, 2 => 250 и т.д.)
-    private int[] upgradePrices = { 150, 250, 400, 600, 750, 1000 };
+    private int[] upgradePrices = { 150, 250, 400, 600, 750, 1000, 1500, 2000};
 
     private bool isPanelOpen = false;
 
@@ -88,15 +88,15 @@ public class AbilityUpgradeUI : MonoBehaviour
             upgradePanel.SetActive(isPanelOpen);
             Time.timeScale = isPanelOpen ? 0f : 1f;
 
-            if (abilityThree.CurrentLevel == 6 && !WasNotification3) {
+            if (abilityThree.CurrentLevel == 8 && !WasNotification3) {
                 AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability Three");
                 WasNotification3 = true;
             }
-            if (abilityTwo.CurrentLevel == 6 && !WasNotification2) {
+            if (abilityTwo.CurrentLevel == 8 && !WasNotification2) {
                 AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability Two");
                 WasNotification2 = true;
             }
-            if (abilityOne.CurrentLevel == 6 && !WasNotification1) {
+            if (abilityOne.CurrentLevel == 8 && !WasNotification1) {
                 AchievementConditions.OnUpgradeAbilityToMaxLevel("Max Level of ability One");
                 WasNotification1 = true;
             }

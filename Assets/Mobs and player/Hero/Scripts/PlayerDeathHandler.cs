@@ -49,10 +49,10 @@ public class PlayerDeathHandler : MonoBehaviour
 
     void GameOver()
     {
-        if (gameOverUI != null)
-        {
-            gameOverUI.SetActive(true);
-        }
+        
+        
+        gameOverUI.SetActive(true);
+        
 
         Invoke("ReturnToMainMenu", delayBeforeReturn);
     }
