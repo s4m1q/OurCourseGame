@@ -38,7 +38,7 @@ public class AchievementManager : MonoBehaviour
     {
         if (notificationParent == null)
         {
-            Canvas canvas = Object.FindFirstObjectByType<Canvas>();
+            Canvas canvas = FindFirstObjectByType<Canvas>();
             if (canvas != null)
             {
                 notificationParent = canvas.transform;
@@ -54,8 +54,12 @@ public class AchievementManager : MonoBehaviour
         unlockedAchievements.Add(title);
         ShowNotification(title);
 
-        OnAchievementsUpdated?.Invoke(); // для панели достижений
+        OnAchievementsUpdated?.Invoke();
+
+        // 💡 Прямой вызов на крайний случай
+        FindFirstObjectByType<AchievementDisplay>()?.RefreshDisplay();
     }
+
 
     public bool IsUnlocked(string title)
     {

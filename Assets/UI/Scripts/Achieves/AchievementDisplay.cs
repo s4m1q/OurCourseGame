@@ -7,7 +7,7 @@ public class AchievementDisplay : MonoBehaviour
     public TextMeshProUGUI[] page1Achievements;
     public TextMeshProUGUI[] page2Achievements;
     public TextMeshProUGUI[] page3Achievements;
-
+    public static bool костыль = false;
     private string[] allAchievementNames = new string[]
     {
         "kill 30 enemies", "kill 50 enemies", "kill 100 enemies",
@@ -35,27 +35,46 @@ public class AchievementDisplay : MonoBehaviour
 
     private void Start()
     {
-        if (AchievementManager.Instance != null)
+        if (костыль == true)
         {
-            AchievementManager.Instance.OnAchievementsUpdated += RefreshDisplay;
-        }
+            if (AchievementManager.Instance != null)
+            {
+                AchievementManager.Instance.OnAchievementsUpdated += RefreshDisplay;
+            }
 
-        RefreshDisplay(); // отобразить всё сразу при старте
+            RefreshDisplay(); // отобразить всё сразу при старте
+        }
+        else
+        {
+            RefreshDisplayFirstTime();
+            костыль = true;
+        }
     }
 
     private void OnDestroy()
     {
         if (AchievementManager.Instance != null)
             AchievementManager.Instance.OnAchievementsUpdated -= RefreshDisplay;
+
+    }
+    public void RefreshDisplay()
+    {
+        Debug.Log("RefreshDisplay вызван");
+        foreach (var pair in achievementTextMap)
+        {
+            bool unlocked = /*AchievementManager.Instance != null &&*/ AchievementManager.Instance.IsUnlocked(pair.Key);
+            pair.Value.text = unlocked ? $"<s>{pair.Key}</s>" : pair.Key;
+            pair.Value.color = unlocked ? Color.green : Color.gray;
+        }
     }
 
-    public void RefreshDisplay()
+
+    public void RefreshDisplayFirstTime()
     {
         foreach (var pair in achievementTextMap)
         {
-            bool unlocked = AchievementManager.Instance != null && AchievementManager.Instance.IsUnlocked(pair.Key);
-            pair.Value.text = unlocked ? $"<s>{pair.Key}</s>" : pair.Key;
-            pair.Value.color = unlocked ? Color.green : Color.gray;
+            pair.Value.text = $"{pair.Key}";
+            pair.Value.color = Color.gray;
         }
     }
 }

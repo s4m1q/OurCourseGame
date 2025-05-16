@@ -85,7 +85,7 @@ public static class AchievementConditions
     static bool flMaxHP = false;
     public static void OnHealthIncreased(float newHealth) // работает
     {
-        if (newHealth == 340 && flMaxHP == false) {
+        if (newHealth == 370 && flMaxHP == false) {
             AchievementManager.Instance.UnlockAchievement("Got Max HP");
             flMaxHP = true;
         }
@@ -95,7 +95,7 @@ public static class AchievementConditions
     static bool flMaxStamina = false;
     public static void OnStaminaIncreased(float newStamina) // работает
     {
-        if (newStamina == 160 && flMaxStamina == false) {
+        if (newStamina == 180 && flMaxStamina == false) {
             AchievementManager.Instance.UnlockAchievement("Got Max Stamina");
             flMaxStamina = true;
         }
