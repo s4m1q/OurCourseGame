@@ -16,12 +16,14 @@ public class combat : MonoBehaviour
     public LayerMask Enemy_layers;
     public Animator animator;
     public Transform Attack_point;
+    public AudioSource SoundSword;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("HeroKnight_Attack"))
         {
             animator.SetTrigger("Attack");
+            SoundSword.Play();
             AchievementConditions.OnCombatsWere();
             int index = Mathf.Clamp(attackLevel - 1, 0, Mathf.Min(attackDamageByLevel.Length, attackRangeByLevel.Length) - 1);
             int currentDamage = attackDamageByLevel[index];

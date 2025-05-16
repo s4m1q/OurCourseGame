@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OutDoors Tileset_0: 9181280266164393691
+      OutDoors Tileset_1: -5766756397484699697
+      OutDoors Tileset_2: -2237646306389022384
+      OutDoors Tileset_3: -6082547127490131121
+      OutDoors Tileset_4: -7909848087671343848
+      OutDoors Tileset_5: 4882525566700043682
+      OutDoors Tileset_6: -5163606146944991982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

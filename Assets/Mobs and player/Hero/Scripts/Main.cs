@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator anime;
     private SpriteRenderer spriteRenderer; // Компонент для управления спрайтом
+    public AudioSource stepSoundPlayer;
+    public float stepInterval = 0.2f;
+    private float lastStepTime = 0f;
 
     // Параметры здоровья и стамины
     public float maxHealth = 250;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //stepSoundPlayer = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Получаем компонент SpriteRenderer
 
@@ -115,6 +119,23 @@ public class PlayerController : MonoBehaviour
         // Применяем движение к Rigidbody2D
         if (movement != Vector2.zero)
         {
+
+
+            if (Time.time - lastStepTime >= stepInterval)
+            {
+                if (stepSoundPlayer != null && stepSoundPlayer.clip != null)
+                {
+                    stepSoundPlayer.PlayOneShot(stepSoundPlayer.clip);
+                    lastStepTime = Time.time;
+                }
+                else
+                {
+                    Debug.LogWarning("AudioSource or AudioClip is not assigned!");
+                }
+            }
+            
+        
+
             rb.linearVelocity = movement * speed;
 
             // Поворот персонажа в зависимости от направления движения
@@ -134,6 +155,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            if (stepSoundPlayer != null && stepSoundPlayer.isPlaying)
+            {
+                stepSoundPlayer.Stop();
+                lastStepTime=stepInterval;
+            }
             rb.linearVelocity = Vector2.zero;
             anime.SetBool("Walk", false);
         }
