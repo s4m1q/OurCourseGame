@@ -62,7 +62,6 @@ public class RangedEnemyAI : MonoBehaviour
     {
         if (isDead || player == null || navMeshAgent == null) return;
 
-        // Принудительно фиксируем Z-позицию
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
 
         float distance = Vector2.Distance(transform.position, player.position);
@@ -76,7 +75,6 @@ public class RangedEnemyAI : MonoBehaviour
 
             if (inAttackRange)
             {
-                // Стреляем и останавливаемся
                 navMeshAgent.ResetPath();
 
                 if (Time.time - lastAttackTime >= attackCooldown)
@@ -86,7 +84,6 @@ public class RangedEnemyAI : MonoBehaviour
             }
             else
             {
-                // Подходим к игроку
                 Vector3 target = player.position;
                 target.z = 0;
                 navMeshAgent.SetDestination(target);

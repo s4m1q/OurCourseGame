@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     private SpriteRenderer spriteRenderer; 
 
-    public float stunDuration = 0.2f; //Наверное побольше надо сделать
+    public float stunDuration = 0.2f; 
 
     private float attackCooldown = 1f;
     private float lastAttackTime = -999f;
@@ -38,8 +38,8 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         if (navMeshAgent != null)
         {
-            navMeshAgent.updateRotation = false; // Отключаем автоматическое вращение
-            navMeshAgent.updateUpAxis = false; // Предотвращаем изменение вертикальной оси
+            navMeshAgent.updateRotation = false; 
+            navMeshAgent.updateUpAxis = false; 
         }
 
         if (GameManager.Instance != null)
@@ -48,18 +48,15 @@ public class EnemyAI : MonoBehaviour
             damage += GameManager.Instance.enemyDamageMultiplier;
         }
 
-        // Инициализация здоровья
         currentHealth = maxHealth;
         isDead = false;
 
-        // Находим игрока по тегу "Player"
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null)
         {
             Debug.LogError("EnemyAI: Player not found! Make sure the player has the 'Player' tag.");
         }
 
-        // Получаем компонент NavMeshAgent
         navMeshAgent = GetComponent<NavMeshAgent>();
         if (navMeshAgent == null)
         {
@@ -78,13 +75,11 @@ public class EnemyAI : MonoBehaviour
         {
             FollowPlayer();
 
-            // Поворот по направлению движения
             if (navMeshAgent.velocity.x > 0.1f)
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             else if (navMeshAgent.velocity.x < -0.1f)
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-            // Атака, если близко
             float distance = Vector2.Distance(transform.position, player.position);
             if (distance <= attackRange)
             {
@@ -123,10 +118,8 @@ public class EnemyAI : MonoBehaviour
 
     void CheckPlayerInSight()
     {
-        // Вычисляем расстояние между врагом и игроком
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // Если игрок находится в пределах радиуса видимости
         if (distanceToPlayer <= fieldOfViewRadius)
         {
             isPlayerInSight = true;
@@ -139,11 +132,9 @@ public class EnemyAI : MonoBehaviour
 
     void FollowPlayer()
     {
-        // Устанавливаем цель для NavMeshAgent
         navMeshAgent.SetDestination(player.position);
     }
 
-    // Метод для получения урона
     public void TakeDamage(float damageAmount)
     {
         if (isDead) return;
@@ -155,7 +146,6 @@ public class EnemyAI : MonoBehaviour
 
         StartCoroutine(StunAndFlash());
 
-        // Если здоровье закончилось, вызываем метод Die
         if (currentHealth <= 0)
         {
             Die();
@@ -167,11 +157,9 @@ public class EnemyAI : MonoBehaviour
         if (navMeshAgent != null)
             navMeshAgent.isStopped = true;
 
-        // Включаем анимацию получения урона
         if (animator != null)
             animator.SetBool("IsAttacked", true);
 
-        // Меняем цвет спрайта
         if (spriteRenderer != null)
             spriteRenderer.color = Color.red;
 
@@ -180,7 +168,6 @@ public class EnemyAI : MonoBehaviour
         if (spriteRenderer != null)
             spriteRenderer.color = Color.white;
 
-        // Отключаем флаг анимации удара
         if (animator != null)
             animator.SetBool("IsAttacked", false);
 
@@ -190,7 +177,6 @@ public class EnemyAI : MonoBehaviour
             navMeshAgent.isStopped = false;
     }
 
-    // Метод для смерти врага
     private void Die()
     {
         AchievementConditions.OnEnemyKilled();
@@ -206,7 +192,6 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Параметр IsDead установлен в true");
         }
 
-        // Отключаем всё, что может мешать анимации
         if (navMeshAgent != null) 
         {
             navMeshAgent.isStopped = true;
@@ -219,24 +204,20 @@ public class EnemyAI : MonoBehaviour
         var rb = GetComponent<Rigidbody2D>();
         if (rb != null) rb.simulated = false;
 
-        // Запускаем анимацию смерти (убедимся, что параметр IsDead = true)
         if (animator != null)
         {
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsDead", true);
         }
 
-        // Выпадение дропа (если нужно)
         if (dropPrefab != null && Random.value < dropChance)
         {
             Instantiate(dropPrefab, transform.position, Quaternion.identity);
         }
 
-        // Уничтожаем объект через 2 секунды (даём время на анимацию)
         Destroy(gameObject, 2f);
     }
 
-    // Визуализация области видимости в редакторе Unity
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

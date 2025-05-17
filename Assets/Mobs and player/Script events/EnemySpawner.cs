@@ -45,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         if (currentWave > totalWaves)
-            return; // Все волны завершены
+            return; 
 
         if (waveActive)
         {
@@ -132,7 +132,7 @@ public class EnemySpawner : MonoBehaviour
             waitingForNextWave = false;
             enemiesSpawnedInWave = 0;
             spawnTimer = 0f;
-            enemiesPerWave += waveEnemyIncrease; // Увеличиваем количество врагов с каждой волной
+            enemiesPerWave += waveEnemyIncrease; 
             Debug.Log($"Старт волны {currentWave} с {enemiesPerWave} врагами");
         }
     }
@@ -161,15 +161,15 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public int TotalEnemiesRemaining()
-{
-    CleanupNullEnemies();
-    return spawnedEnemies.Count;
-}
+    {
+        CleanupNullEnemies();
+        return spawnedEnemies.Count;
+    }
 
-public bool IsAllWavesFinished()
-{
-    return currentWave > totalWaves;
-}
+    public bool IsAllWavesFinished()
+    {
+        return currentWave > totalWaves;
+    }
 
 
 }

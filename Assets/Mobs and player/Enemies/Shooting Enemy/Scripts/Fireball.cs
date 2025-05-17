@@ -32,10 +32,10 @@ public class Fireball : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-        /* //Проверяем, есть ли под фаерболом навмеш
+        /* 
         if (!IsOnNavMesh(transform.position))
         {
-            Destroy(gameObject); // Уничтожить, если вне навмеша
+            Destroy(gameObject); 
         } */
 
         if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
@@ -47,7 +47,7 @@ public class Fireball : MonoBehaviour
     /* bool IsOnNavMesh(Vector3 position)
     {
         NavMeshHit hit;
-        // radius = 0.1f, чтобы проверить точку
+        // radius = 0.1f
         return NavMesh.SamplePosition(position, out hit, 0.1f, NavMesh.AllAreas);
     } */
 
@@ -61,7 +61,7 @@ public class Fireball : MonoBehaviour
                 player.TakeDamage(damage);
             }
 
-            Destroy(gameObject); // уничтожить при попадании
+            Destroy(gameObject); 
         }
     }
 }

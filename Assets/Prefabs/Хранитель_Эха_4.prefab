@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8788094336900559937}
   - component: {fileID: 97339598301757305}
   - component: {fileID: 491979071315871420}
+  - component: {fileID: 7498751378903776835}
   m_Layer: 0
   m_Name: "\u0425\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C_\u042D\u0445\u0430_4"
   m_TagString: Untagged
@@ -110,3 +111,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7498751378903776835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557388325062369268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a990e4115340d4898d966ecd18fd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

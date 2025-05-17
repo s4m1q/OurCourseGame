@@ -64,7 +64,6 @@ public class RangeZonaEnemyAI : MonoBehaviour
     {
         if (isDead || player == null || navMeshAgent == null) return;
 
-        // Принудительно фиксируем Z-позицию
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
 
         float distance = Vector2.Distance(transform.position, player.position);
@@ -78,7 +77,6 @@ public class RangeZonaEnemyAI : MonoBehaviour
 
             if (inAttackRange)
             {
-                // Стреляем и останавливаемся
                 navMeshAgent.ResetPath();
 
                 if (Time.time - lastAttackTime >= attackCooldown)
@@ -88,7 +86,6 @@ public class RangeZonaEnemyAI : MonoBehaviour
             }
             else
             {
-                // Подходим к игроку
                 Vector3 target = player.position;
                 target.z = 0;
                 navMeshAgent.SetDestination(target);
@@ -123,7 +120,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
         GameObject fireball = Instantiate(fireballPrefab, firePos, Quaternion.identity);
         Vector2 direction = (targetPos - firePos).normalized;
 
-        FireballZone fb = fireball.GetComponent<FireballZone>(); // <-- ИСПРАВЛЕНО
+        FireballZone fb = fireball.GetComponent<FireballZone>(); 
         if (fb != null)
         {
             fb.fireZonePrefab = fireZonePrefab;

@@ -26,7 +26,7 @@ public class FireballZone : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetBool("IsBurning", true); // 🔥 Запускаем анимацию сразу
+            animator.SetBool("IsBurning", true); 
         }
 
         if (GameManager.Instance != null)
@@ -41,7 +41,7 @@ public class FireballZone : MonoBehaviour
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-/*         // Проверка, если вне NavMesh — уничтожить
+/*         
         if (!IsOnNavMesh(transform.position))
         {
             Destroy(gameObject);
