@@ -43,7 +43,7 @@ jobs:
           zip -r Build-${{ matrix.targetPlatform }}.zip build/${{ matrix.targetPlatform }}
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: Build-${{ matrix.targetPlatform }}.zip
