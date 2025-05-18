@@ -17,11 +17,11 @@ jobs:
       matrix:
         include:
           - targetPlatform: StandaloneWindows64
-            imageTag: linux-il2cpp-1
+            customImage: unityci/editor:ubuntu-2022.3.10f1-base-1
           - targetPlatform: StandaloneOSX
-            imageTag: linux-il2cpp-1
+            customImage: unityci/editor:ubuntu-2022.3.10f1-base-1
           - targetPlatform: StandaloneLinux64
-            imageTag: linux-mono-1  
+            customImage: unityci/editor:ubuntu-2022.3.10f1-linux-mono-1  
 
     steps:
       - name: Checkout repository
@@ -31,6 +31,7 @@ jobs:
         uses: game-ci/unity-activate@v2
         with:
           unityVersion: 2022.3.10f1
+          customImage: ${{ matrix.customImage }}
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
@@ -40,7 +41,7 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 2022.3.10f1
-          customImage: unityci/editor:ubuntu-2022.3.10f1-${{ matrix.imageTag }}
+          customImage: ${{ matrix.customImage }}
 
       - name: Archive build
         run: |
