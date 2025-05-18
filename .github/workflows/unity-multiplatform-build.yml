@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -37,8 +38,12 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 6000.0.29f1
 
+      - name: Archive build
+        run: |
+          zip -r Build-${{ matrix.targetPlatform }}.zip build/${{ matrix.targetPlatform }}
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          path: Build-${{ matrix.targetPlatform }}.zip
