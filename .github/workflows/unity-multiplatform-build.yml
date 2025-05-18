@@ -15,10 +15,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        targetPlatform:
-          - StandaloneWindows64
-          - StandaloneOSX
-          - StandaloneLinux64
+        include:
+          - targetPlatform: StandaloneWindows64
+            imageTag: linux-il2cpp-1
+          - targetPlatform: StandaloneOSX
+            imageTag: linux-il2cpp-1
+          - targetPlatform: StandaloneLinux64
+            imageTag: linux-mono-1  
 
     steps:
       - name: Checkout repository
@@ -37,6 +40,7 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 2022.3.10f1
+          customImage: unityci/editor:ubuntu-2022.3.10f1-${{ matrix.imageTag }}
 
       - name: Archive build
         run: |
