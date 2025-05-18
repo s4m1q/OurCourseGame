@@ -15,33 +15,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - targetPlatform: StandaloneWindows64
-            customImage: unityci/editor:ubuntu-2022.3.10f1-base-1
-          - targetPlatform: StandaloneOSX
-            customImage: unityci/editor:ubuntu-2022.3.10f1-base-1
-          - targetPlatform: StandaloneLinux64
-            customImage: unityci/editor:ubuntu-2022.3.10f1-linux-mono-1  
+        targetPlatform:
+          - StandaloneWindows64
+          - StandaloneOSX
+          - StandaloneLinux64
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Unity - Activate license
-        uses: game-ci/unity-activate@v2
-        with:
-          unityVersion: 2022.3.10f1
-          customImage: ${{ matrix.customImage }}
-        env:
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
 
       - name: Unity - Build ${{ matrix.targetPlatform }}
         uses: game-ci/unity-builder@v2
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 2022.3.10f1
-          customImage: ${{ matrix.customImage }}
 
       - name: Archive build
         run: |
