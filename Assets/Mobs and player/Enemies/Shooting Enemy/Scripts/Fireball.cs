@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour
         targetPosition.z = 0f;
     }
 
-    void Start()
+    public void Start()
     {
 
         if (GameManager.Instance != null)
@@ -28,7 +28,7 @@ public class Fireball : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void Update()
+    public void Update()
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
@@ -51,7 +51,7 @@ public class Fireball : MonoBehaviour
         return NavMesh.SamplePosition(position, out hit, 0.1f, NavMesh.AllAreas);
     } */
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

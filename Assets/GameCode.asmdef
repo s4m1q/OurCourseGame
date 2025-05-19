@@ -1,0 +1,12 @@
+{
+    "name": "GameCode",
+    "references": [
+        "UnityEngine",
+        "UnityEngine.AI",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI",
+        "UnityEngine.Physics2D"
+    ],
+    "includePlatforms": [],
+    "autoReferenced": false
+}
