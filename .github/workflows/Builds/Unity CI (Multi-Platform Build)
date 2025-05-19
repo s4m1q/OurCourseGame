@@ -39,7 +39,10 @@ jobs:
           buildName: Build
           buildsPath: Builds/${{ matrix.platform }}
           unityVersion: 2022.3.29f1
-          unityLicense: ${{ secrets.UNITY_LICENSE }}
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
