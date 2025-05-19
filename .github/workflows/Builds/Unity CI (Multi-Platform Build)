@@ -21,21 +21,16 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Cache Unity Library
-        if: matrix.platform == 'macos-latest' 
         uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ hashFiles('Assets/**', 'ProjectSettings/**') }}
-
-      - name: Activate Unity License
-        uses: game-ci/unity-request-activation-file@v2
-        with:
-          unityLicense: ${{ secrets.UNITY_LICENSE }}
-          unityVersion: 6000.0.29f1
+          key: Library-${{ matrix.platform }}-${{ hashFiles('Assets/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ matrix.platform }}-
 
       - name: Build Unity Project
         uses: game-ci/unity-builder@v2
@@ -43,7 +38,8 @@ jobs:
           targetPlatform: ${{ matrix.unityTarget }}  
           buildName: Build
           buildsPath: Builds/${{ matrix.platform }}
-          unityVersion: 6000.0.29f1
+          unityVersion: 2022.3.29f1
+          unityLicense: ${{ secrets.UNITY_LICENSE }}
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
