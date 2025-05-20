@@ -23,7 +23,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private float lastAttackTime = -999f;
-    private bool isDead = false;
+    public bool isDead = false;
 
     private NavMeshAgent navMeshAgent;
 
@@ -33,7 +33,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
 
     public GameObject fireZonePrefab;
 
-    void Start()
+    public void Start()
     {
         originalScale = transform.localScale;
         animator = GetComponent<Animator>();
@@ -99,7 +99,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
         UpdateAnimation(seesPlayer, inAttackRange);
     }
 
-    void FacePlayer()
+    public void FacePlayer()
     {
         if (player.position.x > transform.position.x)
             transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
@@ -107,7 +107,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
             transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
     }
 
-    void CastFireball()
+    public void CastFireball()
     {
         if (fireballPrefab == null || firePoint == null || player == null) return;
 
@@ -130,7 +130,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
         lastAttackTime = Time.time;
     }
 
-    void UpdateAnimation(bool seesPlayer, bool inAttackRange)
+    public void UpdateAnimation(bool seesPlayer, bool inAttackRange)
     {
         if (animator == null) return;
 
@@ -179,7 +179,7 @@ public class RangeZonaEnemyAI : MonoBehaviour
             navMeshAgent.isStopped = false;
     }
 
-    void Die()
+    public void Die()
     {
         if (isDead) return;
         isDead = true;

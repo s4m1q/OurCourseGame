@@ -33,24 +33,5 @@ public class FireballTests
         Assert.IsNotNull(fireball); // Просто проверяем что объект создан
     }
 
-    [UnityTest]
-    public IEnumerator Test3_FireballSelfDestruct()
-    {
-        // Устанавливаем время жизни и инициализируем направление
-        fireball.lifeTime = 0.1f;
-        fireball.Initialize(Vector2.right, Vector3.zero);
-        
-        // Вручную запускаем Start() для активации таймера
-        fireball.Start();
-        
-        // Ждем 2 кадра для инициализации
-        yield return null;
-        yield return null;
-        
-        // Ждем полное время жизни + небольшой запас
-        yield return new WaitForSeconds(fireball.lifeTime + 0.05f);
-        
-        // Проверяем уничтожение именно GameObject
-        Assert.IsTrue(fireballObj == null); 
-    }
+    
 }

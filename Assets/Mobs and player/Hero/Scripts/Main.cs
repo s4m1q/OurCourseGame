@@ -239,4 +239,6 @@ public class PlayerController : MonoBehaviour
         // Например, можно отключить объект игрока
         gameObject.SetActive(false);
     }
+
+
 }

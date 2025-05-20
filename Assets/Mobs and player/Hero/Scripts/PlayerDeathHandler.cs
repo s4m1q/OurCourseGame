@@ -33,21 +33,25 @@ public class PlayerDeathHandler : MonoBehaviour
 
         if(sceneName == "Level 1") // замените на имя вашей первой сцены
         {
-            RespawnPlayer();
+            RespawnPlayer() ;
         }
         else
         {
             GameOver();
         }
     }
-
+    protected virtual string GetCurrentSceneName() => SceneManager.GetActiveScene().name;
+    protected virtual void RespawnPlayer() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    /*
     void RespawnPlayer()
     {   
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    */
+    
 
-    void GameOver()
+    protected virtual void GameOver()
     {
         
         
@@ -57,8 +61,11 @@ public class PlayerDeathHandler : MonoBehaviour
         Invoke("ReturnToMainMenu", delayBeforeReturn);
     }
 
-    void ReturnToMainMenu()
+    protected virtual void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Main Menu"); // Название сцены главного меню
     }
+
+
+    
 }
