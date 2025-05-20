@@ -33,5 +33,4 @@ public class FireballTests
         Assert.IsNotNull(fireball); // Просто проверяем что объект создан
     }
 
-    
 }
