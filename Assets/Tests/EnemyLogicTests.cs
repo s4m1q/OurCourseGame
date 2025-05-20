@@ -10,7 +10,7 @@ public class EnemyLogicTests
     {
         currentHealth = maxHealth;
     }
-
+    //----
     private void TakeDamage(float damage)
     {
         currentHealth -= damage;
