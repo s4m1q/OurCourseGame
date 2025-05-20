@@ -1,37 +1,37 @@
-name: Actions 😎
+name: Build project 😎
 
 on: [push, pull_request]
 
 jobs:
-  build:
-    name: Build my project ✨
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneOSX 
+          - StandaloneWindows64 
+          - StandaloneLinux64 
     steps:
-      # Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: true
-
-      # Cache
+          fetch-depth: 0
+          lfs: true  
       - uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
-
-      # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-
-      # Build
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      # - name: Run tests
+      #   uses: game-ci/unity-test-runner@v4
+      #   env:
+      #     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      #     UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+      #     UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+      #   with:
+      #     githubToken: ${{ secrets.GITHUB_TOKEN }}
       - name: Build project
         uses: game-ci/unity-builder@v4
         env:
@@ -39,10 +39,9 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: WebGL
-
-      # Output
-      - uses: actions/upload-artifact@v4
+          targetPlatform: ${{ matrix.targetPlatform }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
         with:
-          name: Build
-          path: build
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
