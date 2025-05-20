@@ -19,6 +19,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true  
+      - run:  ls -lah    
       - run: find /Assets -type d -name Editor -exec rm -rf {} +
       - uses: actions/cache@v3
         with:
