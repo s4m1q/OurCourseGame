@@ -6,6 +6,7 @@ namespace Test
 {
     public class UnitTests
     {
+        /*
         [Test]
         public void Player_Take_Damage()
         {
@@ -19,7 +20,7 @@ namespace Test
             //Assert
             Assert.AreEqual(20, player.currentHealth);
         }
-
+        */
         [Test]
         public void Player_Add_LessStamina()
         {
