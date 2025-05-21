@@ -20,6 +20,6 @@ public class MemoryLeakTests
         System.GC.Collect();
         System.GC.WaitForPendingFinalizers();
 
-        Assert.IsFalse(weakRef.IsAlive, "GameObject íå áûë óíè÷òîæåí, âîçìîæíà óòå÷êà ïàìÿòè.");
+        Assert.IsFalse(weakRef.IsAlive, "GameObject не был уничтожен, возможна утечка памяти.");
     }
 }
