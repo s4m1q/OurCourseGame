@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cb745ac5f476f4cab24eed3fe3b4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   currentHealth: 0
   fieldOfViewRadius: 10
   castRange: 6
@@ -185,6 +185,7 @@ MonoBehaviour:
     type: 3}
   dropChance: 0.8
   player: {fileID: 0}
+  isDead: 0
   stunDuration: 0.2
   fireZonePrefab: {fileID: 5993175491830378009, guid: cacc7ac36b545c047be47f374a8bf805,
     type: 3}

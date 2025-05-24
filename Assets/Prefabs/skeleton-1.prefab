@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73303f1b1fd08a2498f33d436fc26802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 30
+  currentHealth: 0
   damage: 10
   fieldOfViewRadius: 25
   dropChance: 0.8

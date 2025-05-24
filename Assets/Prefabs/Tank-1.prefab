@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4595d12dd7fd23045ae91db0dc6a2134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 140
+  maxHealth: 40
   currentHealth: 0
   damage: 15
   fieldOfViewRadius: 25
