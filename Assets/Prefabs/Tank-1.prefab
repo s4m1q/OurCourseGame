@@ -196,7 +196,7 @@ MonoBehaviour:
   maxHealth: 40
   currentHealth: 0
   damage: 15
-  fieldOfViewRadius: 25
+  fieldOfViewRadius: 250
   dropChance: 0.8
   dropPrefab: {fileID: 5808691712331237788, guid: 15831508948c6c747b1b644f0089b113,
     type: 3}

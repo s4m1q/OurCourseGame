@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 0
-  fieldOfViewRadius: 10
+  fieldOfViewRadius: 250
   castRange: 6
   attackCooldown: 2
   fireballPrefab: {fileID: 4481589575066320256, guid: 0e76274202068824bb3f2b1d6332e932,

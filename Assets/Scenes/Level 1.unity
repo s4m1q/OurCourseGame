@@ -114139,12 +114139,12 @@ PrefabInstance:
     - target: {fileID: 1526990008772110494, guid: 39dcb0c1309343e428dea90cce28d0a9,
         type: 3}
       propertyPath: enemiesPerWave
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1526990008772110494, guid: 39dcb0c1309343e428dea90cce28d0a9,
         type: 3}
       propertyPath: breakBetweenWaves
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1526990008772110494, guid: 39dcb0c1309343e428dea90cce28d0a9,
         type: 3}
@@ -114245,10 +114245,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120032660483576963, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 120032660483576963, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 282775441378386609, guid: ec038bc7dfe16644faa0d027131776c8,
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 628047119660875166, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 783989597499265687, guid: ec038bc7dfe16644faa0d027131776c8,
         type: 3}
@@ -114299,11 +114314,31 @@ PrefabInstance:
         \u0410 \u0438\u0441\u0442\u0438\u043D\u0430 \u0440\u0435\u0434\u043A\u043E
         \u0431\u044B\u0432\u0430\u0435\u0442 \u0434\u043E\u0431\u0440\u043E\u0439."
       objectReference: {fileID: 0}
+    - target: {fileID: 966050493851173523, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1418183019783577575, guid: ec038bc7dfe16644faa0d027131776c8,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 5690384547518744041}
+    - target: {fileID: 3152656262295351341, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731188299384608248, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777232297656841020, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5266983388575630848, guid: ec038bc7dfe16644faa0d027131776c8,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -114363,6 +114398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: coins
       value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513895737581264084, guid: ec038bc7dfe16644faa0d027131776c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8803646925490121366, guid: ec038bc7dfe16644faa0d027131776c8,
         type: 3}
