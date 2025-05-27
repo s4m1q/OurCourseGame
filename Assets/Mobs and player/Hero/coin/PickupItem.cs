@@ -11,10 +11,10 @@ public class PickupItem : MonoBehaviour
 
     public float attractionRadius = 3f;
     public float attractionSpeed = 5f;
-    public float rotationSpeed = 360f; // Скорость вращения
+    public float rotationSpeed = 360f;
 
     private Transform player;
-    private TrailRenderer trail; // Ссылка на TrailRenderer
+    private TrailRenderer trail; 
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class PickupItem : MonoBehaviour
         trail = GetComponent<TrailRenderer>();
         if (trail != null)
         {
-            trail.enabled = false; // Выключаем след по умолчанию
+            trail.enabled = false; 
         }
     }
 
@@ -33,14 +33,11 @@ public class PickupItem : MonoBehaviour
             float distance = Vector2.Distance(transform.position, player.position);
             if (distance <= attractionRadius)
             {
-                // Включаем след, если в радиусе
                 if (trail != null && !trail.enabled)
                     trail.enabled = true;
 
-                // Притягиваемся к игроку
                 transform.position = Vector2.MoveTowards(transform.position, player.position, attractionSpeed * Time.deltaTime);
 
-                // Вращаемся
                 transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
             }
         }

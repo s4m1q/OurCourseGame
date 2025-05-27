@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections; //Поебота добавленная Тимуром
+using System.Collections; //Часть Тимура
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,12 +11,11 @@ public class PlayerController : MonoBehaviour
     private float defaultRunSpeed;
 
     public Animator anime;
-    private SpriteRenderer spriteRenderer; // Компонент для управления спрайтом
+    private SpriteRenderer spriteRenderer; 
     public AudioSource stepSoundPlayer;
     public float stepInterval = 0.2f;
     private float lastStepTime = 0f;
 
-    // Параметры здоровья и стамины
     public float maxHealth = 250;
     public float currentHealth;
     public float maxStamina = 100;
@@ -25,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public float staminaRegenRate = 10f; // Скорость восстановления стамины
     public float staminaDrainRate = 20f; // Скорость расхода стамины
 
-    // Задержка перед восстановлением стамины
     public float staminaRegenDelay = 2f; // Время ожидания перед восстановлением
     private float staminaRegenTimer = 0f; // Таймер для отсчета задержки
 
@@ -34,15 +32,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //stepSoundPlayer = GetComponent<AudioSource>();
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // Получаем компонент SpriteRenderer
 
-        // Инициализация здоровья и стамины
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
+
         currentHealth = maxHealth;
         currentStamina = maxStamina;
 
-        // Отключаем вращение через физику
         rb.freezeRotation = true;
 
         defaultMoveSpeed = moveSpeed;
@@ -98,7 +94,6 @@ public class PlayerController : MonoBehaviour
         // Проверяем, зажата ли клавиша Shift для бега
         bool wantsToRun = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
-        // Если игрок хочет бежать и стамина больше 0, разрешаем бег
         if (wantsToRun && currentStamina > 0)
         {
             isRunning = true;
@@ -116,11 +111,8 @@ public class PlayerController : MonoBehaviour
         // Создаем вектор направления движения
         Vector2 movement = new Vector2(moveX, moveY).normalized;
 
-        // Применяем движение к Rigidbody2D
         if (movement != Vector2.zero)
         {
-
-
             if (Time.time - lastStepTime >= stepInterval)
             {
                 if (stepSoundPlayer != null && stepSoundPlayer.clip != null)
@@ -133,8 +125,6 @@ public class PlayerController : MonoBehaviour
                     Debug.LogWarning("AudioSource or AudioClip is not assigned!");
                 }
             }
-            
-        
 
             rb.linearVelocity = movement * speed;
 
@@ -170,30 +160,24 @@ public class PlayerController : MonoBehaviour
 
     void HandleStamina()
     {
-        // Если бежим и стамина больше 0, расходуем её
         if (isRunning && currentStamina > 0)
         {
             currentStamina -= staminaDrainRate * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina); // Ограничиваем минимальное значение
-
-            // Сбрасываем таймер задержки, если бежим
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
             staminaRegenTimer = staminaRegenDelay;
         }
 
-        // Если стамина равна 0, отсчитываем задержку
         if (currentStamina <= 0)
         {
-            isRunning = false; // Запрещаем бег, если стамина закончилась
+            isRunning = false; 
             staminaRegenTimer -= Time.deltaTime;
 
-            // Если задержка истекла, начинаем восстановление
             if (staminaRegenTimer <= 0)
             {
                 currentStamina += staminaRegenRate * Time.deltaTime;
                 currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
             }
         }
-        // Если не бежим и стамина не пустая, восстанавливаем её
         else if (!isRunning && currentStamina < maxStamina)
         {
             currentStamina += staminaRegenRate * Time.deltaTime;
@@ -204,7 +188,6 @@ public class PlayerController : MonoBehaviour
     public void AddScore(int value) {
         Coins+=value;
         AchievementConditions.OnCoinCollected(Coins);
-        PlayerStats.Instance.coins = Coins;
     }
     public void TakeDamage(float damage)
     {
@@ -212,11 +195,8 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        //Поебота добавленная Тимуром
         StartCoroutine(DamageFlash());
-        //Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
 
-        // Проверяем, если здоровье закончилось
         if (currentHealth <= 0)
         {
             Die();
@@ -224,7 +204,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Поебота добавленная Тимуром
     private IEnumerator DamageFlash()
     {
         spriteRenderer.color = Color.red;
@@ -234,9 +213,7 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        // Логика смерти персонажа
         Debug.Log("Player has died!");
-        // Например, можно отключить объект игрока
         gameObject.SetActive(false);
     }
 

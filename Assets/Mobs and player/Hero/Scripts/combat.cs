@@ -7,10 +7,10 @@ public class combat : MonoBehaviour
     public int attackLevel = 1;
 
     [Header("Урон по уровням")]
-    public int[] attackDamageByLevel; // Заполняется в инспекторе
+    public int[] attackDamageByLevel; 
 
     [Header("Радиус по уровням")]
-    public float[] attackRangeByLevel; // Заполняется в инспекторе
+    public float[] attackRangeByLevel; 
 
     [Header("Прочее")]
     public LayerMask Enemy_layers;
