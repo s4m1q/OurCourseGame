@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // Ссылка на объект, за которым должна следовать камера
     public Transform target;
 
     // Смещение камеры относительно цели
@@ -10,7 +9,6 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        // Если цель существует, перемещаем камеру
         if (target != null)
         {
             transform.position = target.position + offset;

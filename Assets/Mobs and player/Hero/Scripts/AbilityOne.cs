@@ -24,9 +24,6 @@ public class AbilityOne : MonoBehaviour
         {
             Debug.Log("Использована способность 1");
 
-            // Здесь должна запускаться анимация и звук:
-            // AnimationHandler.Play("AbilityOne");
-            // AudioManager.Play("AbilityOneSFX");
             anime.On();
             AchievementConditions.OnAbilityUsed();
             StartCoroutine(TryUse());
@@ -95,8 +92,6 @@ public class AbilityOne : MonoBehaviour
                 }
             }
 
-            // Здесь можно добавить эффект визуального расширяющегося круга
-            // VisualEffectManager.PlayPulseEffect(center, max);
 
             yield return new WaitForSeconds(delay);
         }
