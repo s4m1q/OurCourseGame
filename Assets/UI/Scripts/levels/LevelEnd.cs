@@ -26,12 +26,15 @@ public class LevelEnd : MonoBehaviour
     private bool dialogueStarted = false;
     private int currentLineIndex = 0;
     private Transform player;
+    private GameObject cursor;
 
     void Start()
     {
         interactUI.SetActive(false);
         dialogueText.gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        cursor = player.Find("Cursor").gameObject;
+        
     }
 
     void Update()
@@ -41,6 +44,7 @@ public class LevelEnd : MonoBehaviour
             if (AllWavesCompletedAndNoEnemiesLeft())
             {
                 SpawnEchoKeeper();
+                cursor.GetComponent<CursorLogick>().ShowCursor();
             }
         }
         else if (!portalActivated && echoKeeperInstance != null)
